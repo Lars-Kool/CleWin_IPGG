@@ -53,9 +53,76 @@ A couple tips on scripting (in C) that were not immediately obvious to me:
     3. Rotate (rotateTM)
     4. Translate (translateTM)
 - If you want to transform a symbol, you need to perform all the transformations **before** adding the object.
-- The functions `snapnode` and `rotateTM` require the angle in degrees, whereas all the math functions require the angle in radians.
+- The functions `snapnode()` and `rotateTM()` require the angle in degrees, whereas all the math functions require the angle in radians.
 
 # Symbol descriptions
 
+Below are the descriptions of the basic shapes included in the library, including the parameters that define them. All parameter ranges are given in micrometers, unless stated otherwise.
+
 ## Straight
-<img src="../rsc/snap_node.png" alt="snap_node" width="200"/>
+
+A straight line piece of constant width. Snapnodes are placed along the centerline.
+- Width :   Width of the channel (5 <= Width <= 10000)
+- Length:   Lenght of the channel (5 <= Width <= 10000)
+<img src="../rsc/Straight.png" alt="snap_node" width="100"/>
+
+## Corner_sharp
+
+A sharp corner with constant width of the in and outgoing channel. Snapnodes are placed at the centerline of the in- and outgoing channel.
+- Width:    Width of the channel (5 <= Width <= 10000)
+- Theta:    Angle of the corner (-90 <= Theta <= 90)
+<img src="../rsc/Corner_sharp.png" alt="corner_sharp" width="150"/>
+
+## Corner_smooth
+
+A smooth corner with constant width, snapnodes are placed along the centerline of the in- and outgoing channel.
+- Width:    Width of the channel (5 <= Width <= 10000)
+- Theta:    Angle of rotation of the bend (-180 <= Angle <= 180, in degrees).
+- Radius:   Radius of the centerline of the bend (5 <= Radius <= 10000 and Radius >= Width/2)
+<img src="../rsc/Corner_smooth.png" alt="corner_smooth" width="150"/>
+
+## Constriction_sharp
+
+A linear transition between two channel widths. Note that the output can also be wider than the input! Snapnodes are placed along the centerline.
+- Length:   Length of the transition (5 <= Length <= 10000)
+- Width_in: Width of the ingoing channel (5 <= Width_in <= 10000)
+- Width_out:    Width of the outgoing channel (5 <= Width_out <= 10000)
+<img src="../rsc/Constriction_sharp.png" alt="constriction_sharp" width="150"/>
+
+## Constriction_smooth
+
+A smooth transition between two channel widths. Note that the output can also be wider than the input! Snapnodes are placed along the centerline.
+- Length:   Length of the transition (5 <= Length <= 10000)
+- Width_in: Width of the ingoing channel (5 <= Width_in <= 10000)
+- Width_out:    Width of the outgoing channel (5 <= Width_out <= 10000)
+<img src="../rsc/Constriction_smooth.png" alt="constriction_smooth" width="150"/>
+
+## InOutlet
+
+In- outlet. The circular area has a flat side to match the channel width. The snapnode is placed in the center of the flat side.
+- Radius:   Radius of the in/outlet (5 <= Radius <= 10000)
+- Width:    Width of the in/outgoing channel.
+<img src="../rsc/In_outlet.png" alt="in_outlet" width="150"/>
+
+## Mask
+
+Outline for the mask. After drawing your design in the center, you can select everything and invert it (Ctrl+F11) to yield your mask. Since binary operations are not supported in scripting in our version (only from 5.4 onwards), this mask only works for a mask for a 4" wafer (~10 cm diameter).
+<img src="../rsc/Mask.png" alt="mask" width="150"/>
+
+## T-junction
+
+Rectangular piece with 3-snapnodes, centered along 3 of the 4 sides of the rectangle.
+- Width:    Width of the rectangle (5 <= Width <= 10000)
+- Length:   Length of the rectangle (5 <= Length <= 10000)
+<img src="../rsc/T_junction.png" alt="t_junction" width="150"/>
+
+## X-junction
+
+Rectangular piece with 4 snapnodes, one centered on each of the 4 sides.
+- Width:    Width of the rectangle (5 <= Width <= 10000)
+- Length:   Length of the rectangle (5 <= Length <= 10000)
+<img src="../rsc/X_junction.png" alt="x_junction" width="150"/>
+
+## Y-junction_sharp
+
+

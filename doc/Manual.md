@@ -58,4 +58,4 @@ A couple tips on scripting (in C) that were not immediately obvious to me:
 # Symbol descriptions
 
 ## Straight
-![Test](../rsc/snap_node.png)
+<img src="../rsc/snap_node.png" alt="snap_node" width="200"/>

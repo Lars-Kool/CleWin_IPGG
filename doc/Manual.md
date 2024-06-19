@@ -14,7 +14,7 @@ With CleWin you can place centimeter sized object with nanometric accuracy. But 
 
 To help with this, CleWin has a scripting interface that allows users to program the layout of a symbol in C, Matlab, MaskEngineer, Lua or Python. While this is incredibly powerful, it does bring a high barrier to entry. Moreover, CleWin only supports lines, polygons, circles, and circular arcs. Any other shape has to be aproximated by a polygon using the scripting interface. Furthermore, CleWin allows you to place snapping nodes (including normal vector) in your symbols to ensure perfect alignment, but only using the scripting interface.
 
-<img src="../rsc/snap_node.png" alt="snap_node" width="200"/>
+<img src="../rsc/snap_node.png" alt="snap_node" width="150"/>
 *Example of a snapnode*
 
 This repository (i.e. GitHub folder) aims to bridge the gap between the use of only natively supported shapes, and full on scripting your entire design, by providing a library of parametric symbols (i.e. symbols that can be changed by changing the input parameters) commonly found in microfluidics. This is far from an exhaustive list. If you think a commonly used symbol/shape is missing, feel free to open a request [here](https://github.com/Lars-Kool/CleWin_IPGG/issues).

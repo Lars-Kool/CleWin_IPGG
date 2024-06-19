@@ -3,18 +3,18 @@ By Lars Kool, Plateforme Technologique d'Institut Pierre-Gilles de Gennes
 
 ## Purpose of this repository
 
-CleWin is a layout editor for lithography masks developed and maintained by WieWeb software (in collaboration with the MESA+ Institute at the University of Twente). CleWin is hierarchical, i.e. each layer/design consists of objects/patterns (called "symbols") that can themselves consist of different symbols (see picture below).
-<img src="../rsc/Hierarchical_structure.png" alt="hierarchical_structure" width="300"/>
-Changes made to symbols low in the hierarchy are propagated to the upper layers, so making small changes is easier.
+CleWin is a layout editor for lithography masks developed and maintained by WieWeb software (in collaboration with the MESA+ Institute at the University of Twente). CleWin is hierarchical, i.e. each layer/design consists of objects/patterns (called "symbols") that can themselves consist of different symbols (see picture below). Changes made to symbols low in the hierarchy are propagated to the upper layers, so making small changes is easier.
+
+<img src="../rsc/Hierarchical_structure.png" alt="hierarchical_structure" width="200"/>
 
 With CleWin you can place centimeter sized object with nanometric accuracy. But with this power comes great responsibility. It is the designers responsability to make sure that all symbols are properly aligned, and there are no gaps (any gap could, depending on the resolution of your fabrication method, end up in your mask. See for instance the small gap between the circle and a rectangular channel due to misalignment).
 
-<img src="../rsc/Misalignment.png" alt="misalignment" width="300"/>
+<img src="../rsc/Misalignment.png" alt="misalignment" width="200"/>
 *Slightly misaligned circle and rectangle*
 
 To help with this, CleWin has a scripting interface that allows users to program the layout of a symbol in C, Matlab, MaskEngineer, Lua or Python. While this is incredibly powerful, it does bring a high barrier to entry. Moreover, CleWin only supports lines, polygons, circles, and circular arcs. Any other shape has to be aproximated by a polygon using the scripting interface. Furthermore, CleWin allows you to place snapping nodes (including normal vector) in your symbols to ensure perfect alignment, but only using the scripting interface.
 
-<img src="../rsc/snap_node.png" alt="snap_node" width="400"/>
+<img src="../rsc/snap_node.png" alt="snap_node" width="200"/>
 *Example of a snapnode*
 
 This repository (i.e. GitHub folder) aims to bridge the gap between the use of only natively supported shapes, and full on scripting your entire design, by providing a library of parametric symbols (i.e. symbols that can be changed by changing the input parameters) commonly found in microfluidics. This is far from an exhaustive list. If you think a commonly used symbol/shape is missing, feel free to open a request [here](https://github.com/Lars-Kool/CleWin_IPGG/issues).
@@ -43,7 +43,7 @@ Added libraries can be found at the right side of the screen. We would recommend
 
 Most likely the default size of the symbol does not match your desired size. You can change the parameters (which are detailed per shape below) two ways. You can change the parameters of a specific symbol instance by selecting it followed by 'right-click' and selecting properties (or by pressing 'Alt'+'Enter' after selecting it). You can also change the default parameters of that symbol in your design using 'right-click'->'Properties'in the symbols menu. This automatically changes the parameters of all instances which have the default parameters.
 
-<img src="../rsc/Properties_menu.png" alt="properties_menu" width="250"/>
+<img src="../rsc/Properties_menu.png" alt="properties_menu" width="300"/>
 *Right-click->Properties to change the parameters of the symbol*
 
 The location of the snap-nodes is calculated automatically upon changing the parameters, ensuring the design is always properly aligned. Should you find a case where the snap-node is not properly aligned, please open a ticket [here](https://github.com/Lars-Kool/CleWin_IPGG/issues).
@@ -131,7 +131,7 @@ Rectangular piece with 3-snapnodes, centered along 3 of the 4 sides of the recta
 - Width:    Width of the rectangle (5 <= Width <= 10000)
 - Length:   Length of the rectangle (5 <= Length <= 10000)
 
-<img src="../rsc/T_junction.png" alt="t_junction" width="200/>
+<img src="../rsc/T_junction.png" alt="t_junction" width="200"/>
 
 ## X-junction
 

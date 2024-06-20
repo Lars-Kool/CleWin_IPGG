@@ -10,3 +10,5 @@ This repository contains 3 repositories:
 - src : CleWin-C source-code to build the shapes (to preserve and track the history of the code)
 
 For more details on the repository, e.g. on how to download and add it to CleWin, see the Manual in the doc folder.
+
+This library can be used without Git. Just click the big green "<> Code" button to download the repository.

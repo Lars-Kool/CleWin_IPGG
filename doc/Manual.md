@@ -5,15 +5,15 @@ By Lars Kool, Plateforme Technologique d'Institut Pierre-Gilles de Gennes
 
 CleWin is a layout editor for lithography masks developed and maintained by WieWeb software (in collaboration with the MESA+ Institute at the University of Twente). CleWin is hierarchical, i.e. each layer/design consists of objects/patterns (called "symbols") that can themselves consist of different symbols (see picture below). Changes made to symbols low in the hierarchy are propagated to the upper layers, so making small changes is easier.
 
-![Hierarchical structure of CleWin](../rsc/Hierarchical_structure.png){ width=250px }
+<img src="../rsc/Hierarchical_structure.png" alt="Hierarchical structure of CleWin" width=250px/>
 
 With CleWin you can place centimeter sized object with nanometric accuracy. But with this power comes great responsibility. It is the designers responsability to make sure that all symbols are properly aligned, and there are no gaps (any gap could, depending on the resolution of your fabrication method, end up in your mask. See for instance the small gap between the circle and a rectangular channel due to misalignment).
 
-![Slightly misaligned circle and rectangle](../rsc/Misalignment.png){ width=200px }
+<img src="../rsc/Misalignment.png" alt="Slightly misaligned circle and rectangle" width=200px/>
 
 To help with this, CleWin has a scripting interface that allows users to program the layout of a symbol in C, Matlab, MaskEngineer, Lua or Python. While this is incredibly powerful, it does bring a high barrier to entry. Moreover, CleWin only supports lines, polygons, circles, and circular arcs. Any other shape has to be aproximated by a polygon using the scripting interface. Furthermore, CleWin allows you to place snapping nodes (including normal vector) in your symbols to ensure perfect alignment, but only using the scripting interface.
 
-![Example of a snapnode](../rsc/snap_node.png){ width=150px }
+<img src="../rsc/snap_node.png" alt="Example of a snapnode" width=150px/>
 
 This repository (i.e. GitHub folder) aims to bridge the gap between the use of only natively supported shapes, and full on scripting your entire design, by providing a library of parametric symbols (i.e. symbols that can be changed by changing the input parameters) commonly found in microfluidics. This is far from an exhaustive list. If you think a commonly used symbol/shape is missing, feel free to open a request [here](https://github.com/Lars-Kool/CleWin_IPGG/issues).
 
@@ -25,7 +25,7 @@ This repository (i.e. GitHub folder) aims to bridge the gap between the use of o
 1. First download the repository either by clicking the the green **Code** button, followed by "Download ZIP", and then unzipping the folder, or by cloning the repository `git clone https://github.com/Lars-Kool/CleWin_IPGG` in a folder of your choosing (need to have [**Git**](https://www.git-scm.com/) installed).
 2. Next add the library to CleWin by clicking "**File->Open Library**", and selecting the "Basic_shapes.cif" file in the folder you just downloaded. **Add image of file-open library**
 
-![Open library menu in CleWin](../rsc/Open_library.png) { width=300px }
+<img src="../rsc/Open_library.png" alt="Open library menu in CleWin" width=300px/>
 
 ### Updates
 
@@ -36,11 +36,11 @@ Updating the library using Git is much simpler, just run `git pull`, and the lib
 
 Added libraries can be found at the right side of the screen. We would recommend pinning the library interface, since we expect you to use it frequently. Adding a symbol from the library is as simple as dragging the label of the symbol into your design. Note the semi-circles with a line through them at the edge of the symbols. These are snap-nodes (with the direction indicated by the line). Dragging two symbols with lines snap-nodes close to to each other will cause the symbol to snap to the already present symbol and automatically rotate in the correct orientation. This will prevent any misalignment of the components.
 
-![Library interface in CleWin, note the option to pin the window in the top-right corner](../rsc/Libraries.png){ width=250px }
+<img src="../rsc/Libraries.png" alt="Library interface in CleWin, note the option to pin the window in the top-right corner" width=250px/>
 
 Most likely the default size of the symbol does not match your desired size. You can change the parameters (which are detailed per shape below) two ways. You can change the parameters of a specific symbol instance by selecting it followed by 'right-click' and selecting properties (or by pressing 'Alt'+'Enter' after selecting it). You can also change the default parameters of that symbol in your design using 'right-click'->'Properties'in the symbols menu. This automatically changes the parameters of all instances which have the default parameters.
 
-![Right-click->Properties to change the parameters of the symbol](../rsc/Properties_menu.png) { width=300px }
+<img src="../rsc/Properties_menu.png" alt="Right-click->Properties to change the parameters of the symbol" width=300px/>
 
 The location of the snap-nodes is calculated automatically upon changing the parameters, ensuring the design is always properly aligned. Should you find a case where the snap-node is not properly aligned, please open a ticket [here](https://github.com/Lars-Kool/CleWin_IPGG/issues).
 
@@ -70,7 +70,7 @@ A straight line piece of constant width. Snapnodes are placed along the centerli
 - Width :   Width of the channel (5 <= Width <= 10000)
 - Length:   Lenght of the channel (5 <= Width <= 10000)
 
-![](../rsc/Straight.png){ width=300px }
+<img src="../rsc/Straight.png" alt="straight" width=300px/>
 
 ## Corner_sharp
 
@@ -78,7 +78,7 @@ A sharp corner with constant width of the in and outgoing channel. Snapnodes are
 - Width:    Width of the channel (5 <= Width <= 10000)
 - Theta:    Angle of the corner (-90 <= Theta <= 90)
 
-![](../rsc/Corner_sharp.png){ width=250px }
+<img src="../rsc/Corner_sharp.png" width=250px/>
 
 ## Corner_smooth
 
@@ -87,7 +87,7 @@ A smooth corner with constant width, snapnodes are placed along the centerline o
 - Theta:    Angle of rotation of the bend (-180 <= Angle <= 180, in degrees).
 - Radius:   Radius of the centerline of the bend (5 <= Radius <= 10000 and Radius >= Width/2)
 
-![](../rsc/Corner_smooth.png){ width=250px }
+<img src="../rsc/Corner_smooth.png" width=250px/>
 
 ## Constriction_sharp
 
@@ -96,7 +96,7 @@ A linear transition between two channel widths. Note that the output can also be
 - Width_in: Width of the ingoing channel (5 <= Width_in <= 10000)
 - Width_out:    Width of the outgoing channel (5 <= Width_out <= 10000)
 
-![](../rsc/Constriction_sharp.png){ width=250px }
+<img src="../rsc/Constriction_sharp.png" width=250px/>
 
 ## Constriction_smooth
 
@@ -105,7 +105,7 @@ A smooth transition between two channel widths. Note that the output can also be
 - Width_in: Width of the ingoing channel (5 <= Width_in <= 10000)
 - Width_out:    Width of the outgoing channel (5 <= Width_out <= 10000)
 
-![](../rsc/Constriction_smooth.png){ width=200px }
+<img src="../rsc/Constriction_smooth.png" width=200px/>
 
 ## InOutlet
 
@@ -113,29 +113,31 @@ In- outlet. The circular area has a flat side to match the channel width. The sn
 - Radius:   Radius of the in/outlet (5 <= Radius <= 10000)
 - Width:    Width of the in/outgoing channel.
 
-![](../rsc/In_outlet.png){ width=200px }
+<img src="../rsc/In_outlet.png" width=200px/>
 
 ## Mask
 
 Outline for the mask. After drawing your design in the center, you can select everything and invert it (Ctrl+F11) to yield your mask. Since binary operations are not supported in scripting in our version (only from 5.4 onwards), this mask only works for a mask for a 4" wafer (~10 cm diameter).
 
-![](../rsc/Mask.png){ width=250px }
+<img src="../rsc/Mask.png" width=250px/>
 
 ## T-junction
 
 Rectangular piece with 3-snapnodes, centered along 3 of the 4 sides of the rectangle.
 - Width:    Width of the rectangle (5 <= Width <= 10000)
+<img src="5 <= Width <= 10000"
 - Length:   Length of the rectangle (5 <= Length <= 10000)
 
-![](../rsc/T_junction.png){ width=200 }
+<img src="../rsc/T_junction.png" width=200/>
 
 ## X-junction
 
 Rectangular piece with 4 snapnodes, one centered on each of the 4 sides.
 - Width:    Width of the rectangle (5 <= Width <= 10000)
+<img src="5 <= Width <= 10000"
 - Length:   Length of the rectangle (5 <= Length <= 10000)
 
-![](../rsc/X_junction.png){ width=150px }
+<img src="../rsc/X_junction.png" width=150px/>
 
 ## Y-junction_sharp
 
@@ -146,7 +148,7 @@ Y-junction, where both the angle and width of the output channels can be control
 - Angle_1:      Angle of the widest output channel (0 <= Angle\_1 <= 90)
 - Angle_2:      Angle of the widest output channel (0 <= Angle\_2 <= 90)
 
-![](../rsc/Y-junction_sharp.png){ width=300px }
+<img src="../rsc/Y-junction_sharp.png" width=300px/>
 
 ## Y-junction_smooth
 
@@ -157,7 +159,7 @@ Y-junction, where both the angle and width of the output channels can be control
 - Angle_1:      Angle of the widest output channel (0 <= Angle\_1 <= 90)
 - Angle_2:      Angle of the widest output channel (0 <= Angle\_2 <= 90)
 
-![](../rsc/Y-junction_smooth.png){ width=300 }
+<img src="../rsc/Y-junction_smooth.png" width=300/>
 
 ## U-bend_smooth
 
@@ -166,7 +168,7 @@ U-bend, can be combined into a serpentine channel (also see next symbol). Snapno
 - Height:   Height of the U-bend (5 <= Height <= 10000)
 - Spacing:  Distance between the two straight parts (5 <= Spacing <= 10000)
 
-![](../rsc/U-bend_smooth.png){ width=150 }
+<img src="../rsc/U-bend_smooth.png" width=150/>
 
 ## Serpentine
 
@@ -176,4 +178,4 @@ Serpentine channel with U-bend_smooth corners. Snapnodes are placed at the cente
 - Spacing:  Distance between the two straight parts (5 <= Spacing <= 10000)
 - N:        Number of U-bends (1 <= N <= 100)
 
-![](../rsc/Serpentine.png){ width=300 }
+<img src="../rsc/Serpentine.png" width=300/>

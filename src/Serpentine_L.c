@@ -9,7 +9,6 @@ else {
 }
 
 double length_straight = (Length - 2*Radius*(N + 1))/2;
-double spacing = 2*Radius - Width;
 
 TM m_straight;
 unityTM(&m_straight);
@@ -22,7 +21,7 @@ symbol("Straight", &m_straight);
 parameter("Width", Width);
 parameter("Length", length_straight);
 
-TM m_corner;
+TM m_corner;                                                   
 unityTM(&m_corner);
 translateTM(&m_corner, length_straight, 0);
 symbol("Corner_smooth", &m_corner);
@@ -49,5 +48,5 @@ translateTM(&m, length_straight + Radius - Width/2, 0);
 symbol("Serpentine_N", &m);
 parameter("Height", Height);
 parameter("N", N);
-parameter("Spacing", spacing);
+parameter("Radius", Radius);
 parameter("Width", Width);

@@ -23,7 +23,7 @@ This repository (i.e. GitHub folder) aims to bridge the gap between the use of o
 
 "Installation" of this library is very simple, here we will guide you through the process.
 1. First download the repository either by clicking the the green **Code** button, followed by "Download ZIP", and then unzipping the folder, or by cloning the repository `git clone https://github.com/Lars-Kool/CleWin_IPGG` in a folder of your choosing (need to have [**Git**](https://www.git-scm.com/) installed).
-2. Next add the library to CleWin by clicking "**File->Open Library**", and selecting the "Basic_shapes.cif" file in the folder you just downloaded. **Add image of file-open library**
+2. Next add the library to CleWin by clicking "**File->Open Library**", and selecting the "Basic_shapes.cif" file in the folder you just downloaded.
 
 <img src="../rsc/Open_library.png" alt="Open library menu in CleWin" width=300px/>
 
@@ -76,7 +76,7 @@ A straight line piece of constant width. Snapnodes are placed along the centerli
 
 A sharp corner with constant width of the in and outgoing channel. Snapnodes are placed at the centerline of the in- and outgoing channel.
 - Width:    Width of the channel (5 <= Width <= 10000)
-- Theta:    Angle of the corner (-90 <= Theta <= 90)
+- Angle:    Angle of the corner (-90 <= Angle <= 90)
 
 <img src="../rsc/Corner_sharp.png" width=250px/>
 
@@ -84,7 +84,7 @@ A sharp corner with constant width of the in and outgoing channel. Snapnodes are
 
 A smooth corner with constant width, snapnodes are placed along the centerline of the in- and outgoing channel.
 - Width:    Width of the channel (5 <= Width <= 10000)
-- Theta:    Angle of rotation of the bend (-180 <= Angle <= 180, in degrees).
+- Angle:    Angle of rotation of the bend (-180 <= Angle <= 180, in degrees).
 - Radius:   Radius of the centerline of the bend (5 <= Radius <= 10000 and Radius >= Width/2)
 
 <img src="../rsc/Corner_smooth.png" width=250px/>
@@ -134,7 +134,6 @@ Rectangular piece with 3-snapnodes, centered along 3 of the 4 sides of the recta
 
 Rectangular piece with 4 snapnodes, one centered on each of the 4 sides.
 - Width:    Width of the rectangle (5 <= Width <= 10000)
-<img src="5 <= Width <= 10000"
 - Length:   Length of the rectangle (5 <= Length <= 10000)
 
 <img src="../rsc/X_junction.png" width=150px/>
@@ -163,19 +162,35 @@ Y-junction, where both the angle and width of the output channels can be control
 
 ## U-bend_smooth
 
-U-bend, can be combined into a serpentine channel (also see next symbol). Snapnodes are placed at the centerline of the channel. Note that this symbol is designed as a sub-symbol for a serpentine channel (see next symbol). As such, The actual height is less than the "Height" parameter, as it is expected that a Corner_smooth (Width=Width, Radius=(Width+Spacing)/2, Angle=90) is used to connect the U-bend to the circuit (see the dashed corner). Hence, the actual height is "Height - (Width+Spacing)/2"
+U-bend, can be combined into a serpentine channel (also see next symbol). Snapnodes are placed at the centerline of the channel. Note that this symbol is designed as a sub-symbol for a serpentine channel (see next symbol). As such, The actual height is less than the "Height" parameter, as it is expected that a Corner_smooth (```Width=Width, Radius=(Width+Spacing)/2, Angle=90```) is used to connect the U-bend to the circuit (see the dashed corner). Hence, the actual height is ```Height - Radius```
 - Width:    Width of the channel (5 <= Width <= 10000)
 - Height:   Height of the U-bend (5 <= Height <= 10000)
-- Spacing:  Distance between the two straight parts (5 <= Spacing <= 10000)
+- Radius:   Radius of the centerline of the bend (5 <= Radius <= 10000)
 
 <img src="../rsc/U-bend_smooth.png" width=150/>
 
-## Serpentine
+## Serpentine_N
 
 Serpentine channel with U-bend_smooth corners. Snapnodes are placed at the centerline of the channel. The in- and output of the channel are placed off-center, such that a Corner_smooth (Width=Width, Radius=(Width+Spacing)/2, Angle=90) can be used to connect the serpentine to the circuit (see the dashed corners).
 - Width:    Width of the channel (5 <= Width <= 10000)
-- Height:   Height of the serpentine, U-bend to U-bend (5 <= Height <= 10000)
-- Spacing:  Distance between the two straight parts (5 <= Spacing <= 10000)
+- Height:   Height of the serpentine, centerline to centerline (5 <= Height <= 10000)
+- Radius:   Radius of the centerline of the bend (5 <= Radius <= 10000)
 - N:        Number of U-bends (1 <= N <= 100)
 
-<img src="../rsc/Serpentine.png" width=300/>
+<img src="../rsc/Serpentine_N.png" width=300/>
+
+## Serpentine_L
+
+Serpentine channel with given length and length of the centerline. The number of bends is calculated using the provided Width and rounded up. The number of bends is then used to calculate the actual Width of the serpentine. The actual Width will thus always be slightly smaller than the provided Width.
+
+```N = ceil((Length-Length_path+Radius*(PI-2))/(4*Radius-PI*Radius-Height))```
+
+```Height = -(Length-Length_path+Radius*(PI-2))/N + 4*Radius - PI*Radius```
+
+- Width:    Width of the channel (5 <= Width <= 10000)
+- Height:   Height of the serpentine, U-bend to U-bend (4*Radius <= Height <= 10000)
+- Radius:   Radius of the centerline of the bend (5 <= Radius <= 10000)
+- Length:   Length of the section (5 <= Length <= 10000)
+- Length_path:  Length of the centerline (Length + (2*PI-4)Radius <= Length_path <= 10000)
+
+<img src="../rsc/Serpentine_L.png" width=300/>

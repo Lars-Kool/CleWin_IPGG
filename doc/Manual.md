@@ -160,6 +160,16 @@ Y-junction, where both the angle and width of the output channels can be control
 
 <img src="../rsc/Y-junction_smooth.png" width=300/>
 
+## Split_N1_N2
+
+Straight section that splits N1 inputs into N2 outputs.
+- Length:   Length of the straight section (5 <= Length <= 10000)
+- Width:    Width of the straight section (5 <= Width <= 10000)
+- N1:       Number of inputs (1 <= N1 <= 100)
+- N2:       Number of outputs (1 <= N2 <= 100)
+
+<img src="../rsc/Split_N1_N2.png" width=300px/>
+
 ## U-bend_smooth
 
 U-bend, can be combined into a serpentine channel (also see next symbol). Snapnodes are placed at the centerline of the channel. Note that this symbol is designed as a sub-symbol for a serpentine channel (see next symbol). As such, The actual height is less than the "Height" parameter, as it is expected that a Corner_smooth (```Width=Width, Radius=(Width+Spacing)/2, Angle=90```) is used to connect the U-bend to the circuit (see the dashed corner). Hence, the actual height is ```Height - Radius```

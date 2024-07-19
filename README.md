@@ -2,7 +2,7 @@
 
 by Lars Kool, Plateforme Technologique d'Institut Pierre-Gilles de Gennes
 
-This repository contains a library of basic shapes (and the code to create them) that can be used to assemble bigger and more complex microfluidic channels. All shapes are are parametric (i.e. you can change some parameters to change the shape, rather than having to redraw them).
+This repository contains a library of basic shapes (and the code to generate them) that can be used to assemble bigger and more complex microfluidic channels. All shapes are are parametric (i.e. you can change some parameters to change the shape, rather than having to redraw them).
 
 This repository contains 3 repositories:
 - doc : Documentation of the shapes and their input parameters, as well as instructions on how to load the library, and change the parameters of the shapes
@@ -12,3 +12,5 @@ This repository contains 3 repositories:
 For more details on the repository, e.g. on how to download and add it to CleWin, see the Manual in the doc folder.
 
 This library can be used without Git. Just click the big green "<> Code" button to download the repository.
+
+[![Watch the video]()](https://raw.githubusercontent.com/Lars-Kool/CleWin_IPGG/main/rsc/Intro.mov)

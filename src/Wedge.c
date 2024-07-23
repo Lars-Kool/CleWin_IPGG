@@ -1,3 +1,8 @@
+// Set layer
+char currLayer[100];
+sprintf(currLayer, "#%i", (int)Layer);
+layer(currLayer);
+
 double a_radians = fabs(Angle)*M_PI/180.0;
 double sign = (Angle<0) ? -1.0 : 1.0;
 double nodes[8];

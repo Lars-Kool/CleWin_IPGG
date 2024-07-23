@@ -1,3 +1,8 @@
+// Set layer
+char currLayer[100];
+sprintf(currLayer, "#%i", (int)Layer);
+layer(currLayer);
+
 double a_rad_1 = fabs(Angle_1)*M_PI/180.0;
 double a_rad_2 = fabs(Angle_2)*M_PI/180.0;
 
@@ -11,6 +16,7 @@ symbol("Bend", &m1);
 parameter("Width", Width_out_1);
 parameter("Radius", Radius_1);
 parameter("Angle", Angle_1);
+parameter("Layer", Layer);
 
 TM m2;
 unityTM(&m2);
@@ -19,6 +25,7 @@ symbol("Bend", &m2);
 parameter("Width", Width_out_2);
 parameter("Radius", Radius_2);
 parameter("Angle", -Angle_2);
+parameter("Layer", Layer);
 
 snapnode(0,0,180);
 snapnode(

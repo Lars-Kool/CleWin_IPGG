@@ -1,3 +1,8 @@
+// Set layer
+char currLayer[100];
+sprintf(currLayer, "#%i", (int)Layer);
+layer(currLayer);
+
 double Radius = Width/2 + Spacing/2;
 
 TM ms[100];
@@ -12,6 +17,7 @@ for (i = 0; i < (int)N; i++) {
     parameter("Width", Width);
     parameter("Height", Height/2);
     parameter("Spacing", Spacing);
+    parameter("Layer", Layer);
 }
 
 for (i = 0; i < (int)N-1; i++) {

@@ -1,3 +1,8 @@
+// Set layer
+char currLayer[100];
+sprintf(currLayer, "#%i", (int)Layer);
+layer(currLayer);
+
 double right_hand(double angle, double length, double height, double radius) {
     return (height - 2*radius*(1-cos(angle)))/(length - 2*radius*sin(angle));            
 }
@@ -27,6 +32,7 @@ symbol("Corner_smooth", &m_bend_1);
 parameter("Radius", Radius);
 parameter("Width", Width);
 parameter("Angle", -a_degrees);
+parameter("Layer", Layer);
 
 double length_rectangle = sqrt(pow(Length-2*Radius*sin(a_radians),2) + pow(Height-2*Radius*(1 - cos(a_radians)),2));
 TM m_rectangle;
@@ -36,6 +42,7 @@ translateTM(&m_rectangle, Radius*sin(a_radians),Radius*cos(a_radians)-Radius);
 symbol("Straight", &m_rectangle);
 parameter("Length", length_rectangle);
 parameter("Width", Width);
+parameter("Layer", Layer);
 
 TM m_bend_2;
 unityTM(&m_bend_2);
@@ -45,3 +52,4 @@ symbol("Corner_smooth", &m_bend_2);
 parameter("Radius", Radius);
 parameter("Width", Width);
 parameter("Angle", a_degrees);
+parameter("Layer", Layer);

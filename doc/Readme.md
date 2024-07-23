@@ -34,7 +34,7 @@ Updating the library using Git is much simpler, just run `git pull`, and the lib
 
 ## Adding and modifying symbols in CleWin
 
-Added libraries can be found at the right side of the screen. We would recommend pinning the library interface, since we expect you to use it frequently. Adding a symbol from the library is as simple as dragging the label of the symbol into your design. Note the semi-circles with a line through them at the edge of the symbols. These are snap-nodes (with the direction indicated by the line). Dragging two symbols with lines snap-nodes close to to each other will cause the symbol to snap to the already present symbol and automatically rotate in the correct orientation. This will prevent any misalignment of the components.
+Added libraries can be found at the right side of the screen. We would recommend pinning the library interface, since we expect you to use it frequently. Adding a symbol from the library is as simple as dragging the label of the symbol into your design. If you are not able to find a symbol described below in the list, make sure that you expanded all symbols. Some symbols can be hidden as subsymbols. Note the semi-circles with a line through them at the edge of the symbols. These are snap-nodes (with the direction indicated by the line). Dragging two symbols with lines snap-nodes close to to each other will cause the symbol to snap to the already present symbol and automatically rotate in the correct orientation. This will prevent any misalignment of the components.
 
 <img src="../rsc/Libraries.png" alt="Library interface in CleWin, note the option to pin the window in the top-right corner" width=250px/>
 
@@ -69,12 +69,14 @@ A couple tips on scripting (in C) that were not immediately obvious to me:
 # Symbol descriptions
 
 Below are the descriptions of the basic shapes included in the library, including the parameters that define them. All parameter ranges are given in micrometers, unless stated otherwise. **It is possible that some of the shapes are not visible, that is because CleWin includes them as sub-symbols of other symbols. Make sure you have all symbols expanded**
+Also, symbols will not be drawn on the currently active layer. Rather, they will be drawn on the layer indicated by the index-parameter "Layer", which should be an integer (non-integers will be rounded down). I have not found a convenient way to change the layer of a group of symbols, so make sure you set the Layer correctly. Note, if the provided layer index does not exist, it will be created automatically.
 
 ## Straight
 
 A straight line piece of constant width. Snapnodes are placed along the centerline.
 - Width :   Width of the channel (5 <= Width <= 10000)
 - Length:   Lenght of the channel (5 <= Width <= 10000)
+- Layer:    Index of the layer (0 <= Layer <= 255)
 
 <img src="../rsc/Straight.png" alt="straight" width=300px/>
 
@@ -83,6 +85,7 @@ A straight line piece of constant width. Snapnodes are placed along the centerli
 A sharp corner with constant width of the in and outgoing channel. Snapnodes are placed at the centerline of the in- and outgoing channel.
 - Width:    Width of the channel (5 <= Width <= 10000)
 - Angle:    Angle of the corner (-90 <= Angle <= 90)
+- Layer:    Index of the layer (0 <= Layer <= 255)
 
 <img src="../rsc/Corner_sharp.png" width=250px/>
 
@@ -92,6 +95,7 @@ A smooth corner with constant width, snapnodes are placed along the centerline o
 - Width:    Width of the channel (5 <= Width <= 10000)
 - Angle:    Angle of rotation of the bend (-180 <= Angle <= 180, in degrees).
 - Radius:   Radius of the centerline of the bend (5 <= Radius <= 10000 and Radius >= Width/2)
+- Layer:    Index of the layer (0 <= Layer <= 255)
 
 <img src="../rsc/Corner_smooth.png" width=250px/>
 
@@ -101,6 +105,7 @@ A linear transition between two channel widths. Note that the output can also be
 - Length:   Length of the transition (5 <= Length <= 10000)
 - Width_in: Width of the ingoing channel (5 <= Width_in <= 10000)
 - Width_out:    Width of the outgoing channel (5 <= Width_out <= 10000)
+- Layer:    Index of the layer (0 <= Layer <= 255)
 
 <img src="../rsc/Constriction_sharp.png" width=250px/>
 
@@ -110,6 +115,7 @@ A smooth transition between two channel widths. Note that the output can also be
 - Length:   Length of the transition (5 <= Length <= 10000)
 - Width_in: Width of the ingoing channel (5 <= Width_in <= 10000)
 - Width_out:    Width of the outgoing channel (5 <= Width_out <= 10000)
+- Layer:    Index of the layer (0 <= Layer <= 255)
 
 <img src="../rsc/Constriction_smooth.png" width=200px/>
 
@@ -118,6 +124,7 @@ A smooth transition between two channel widths. Note that the output can also be
 In- outlet. The circular area has a flat side to match the channel width. The snapnode is placed in the center of the flat side.
 - Radius:   Radius of the in/outlet (5 <= Radius <= 10000)
 - Width:    Width of the in/outgoing channel.
+- Layer:    Index of the layer (0 <= Layer <= 255)
 
 <img src="../rsc/In_outlet.png" width=200px/>
 
@@ -131,8 +138,8 @@ Outline for the mask. After drawing your design in the center, you can select ev
 
 Rectangular piece with 3-snapnodes, centered along 3 of the 4 sides of the rectangle.
 - Width:    Width of the rectangle (5 <= Width <= 10000)
-<img src="5 <= Width <= 10000"
 - Length:   Length of the rectangle (5 <= Length <= 10000)
+- Layer:    Index of the layer (0 <= Layer <= 255)
 
 <img src="../rsc/T_junction.png" width=200/>
 
@@ -141,6 +148,7 @@ Rectangular piece with 3-snapnodes, centered along 3 of the 4 sides of the recta
 Rectangular piece with 4 snapnodes, one centered on each of the 4 sides.
 - Width:    Width of the rectangle (5 <= Width <= 10000)
 - Length:   Length of the rectangle (5 <= Length <= 10000)
+- Layer:    Index of the layer (0 <= Layer <= 255)
 
 <img src="../rsc/X_junction.png" width=150px/>
 
@@ -152,6 +160,7 @@ Y-junction, where both the angle and width of the output channels can be control
 - Width_out_2:  Width of the widest output channel (5 <= Width\_out\_2 <= 10000)
 - Angle_1:      Angle of the widest output channel (0 <= Angle\_1 <= 90)
 - Angle_2:      Angle of the widest output channel (0 <= Angle\_2 <= 90)
+- Layer:    Index of the layer (0 <= Layer <= 255)
 
 <img src="../rsc/Y-junction_sharp.png" width=300px/>
 
@@ -163,6 +172,7 @@ Y-junction, where both the angle and width of the output channels can be control
 - Width_out_2:  Width of the widest output channel (5 <= Width\_out\_2 <= 10000)
 - Angle_1:      Angle of the widest output channel (0 <= Angle\_1 <= 90)
 - Angle_2:      Angle of the widest output channel (0 <= Angle\_2 <= 90)
+- Layer:    Index of the layer (0 <= Layer <= 255)
 
 <img src="../rsc/Y-junction_smooth.png" width=300/>
 
@@ -173,6 +183,7 @@ Straight section that splits N1 inputs into N2 outputs.
 - Width:    Width of the straight section (5 <= Width <= 10000)
 - N1:       Number of inputs (1 <= N1 <= 100)
 - N2:       Number of outputs (1 <= N2 <= 100)
+- Layer:    Index of the layer (0 <= Layer <= 255)
 
 <img src="../rsc/Split_N1_N2.png" width=300px/>
 
@@ -182,6 +193,7 @@ U-bend, can be combined into a serpentine channel (also see next symbol). Snapno
 - Width:    Width of the channel (5 <= Width <= 10000)
 - Height:   Height of the U-bend (5 <= Height <= 10000)
 - Radius:   Radius of the centerline of the bend (5 <= Radius <= 10000)
+- Layer:    Index of the layer (0 <= Layer <= 255)
 
 <img src="../rsc/U-bend_smooth.png" width=150/>
 
@@ -192,6 +204,7 @@ Serpentine channel with U-bend_smooth corners. Snapnodes are placed at the cente
 - Height:   Height of the serpentine, centerline to centerline (5 <= Height <= 10000)
 - Radius:   Radius of the centerline of the bend (5 <= Radius <= 10000)
 - N:        Number of U-bends (1 <= N <= 100)
+- Layer:    Index of the layer (0 <= Layer <= 255)
 
 <img src="../rsc/Serpentine_N.png" width=300/>
 
@@ -208,6 +221,7 @@ Serpentine channel with given length and length of the centerline. The number of
 - Radius:   Radius of the centerline of the bend (5 <= Radius <= 10000)
 - Length:   Length of the section (5 <= Length <= 10000)
 - Length_path:  Length of the centerline (Length + (2*PI-4)Radius <= Length_path <= 10000)
+- Layer:    Index of the layer (0 <= Layer <= 255)
 
 <img src="../rsc/Serpentine_L.png" width=300/>
 
@@ -219,5 +233,18 @@ Smoothly shifting the channel up/down by a (center-to-center) distance of Height
 - Height:   Vertical displacement (5 <= Height <= 10000)
 - Length:   Horizontal displacement (5 <= Length <= 10000)
 - Radius:   Radius of curvature (5 <= Radius <= 10000)
+- Layer:    Index of the layer (0 <= Layer <= 255)
 
 <img src="../rsc/Shift_smooth.png" width=300/>
+
+## Herringbones
+
+Creates an array of herringbone channels for mixing. Note that the snapping works across layer!
+
+- Width:    Width of the channel (5 <= Width <= 10000)
+- Width_herringbone:    Width of the herrinbone (5 <= Width_herringbone <= 10000)
+- Spacing:  Distance between the herringbones (5 <= Spacing <= 10000)
+- N_per_group:  Number of herrinbones in a group, i.e. cluster with the same orientation (1 <= N_per_group <= 100)
+- N_groups: Number of groups, each group is a mirror along x of the previous group (1 <= N_groups <= 100)
+
+<img src="../rsc/Herringbones.png" width=300/>

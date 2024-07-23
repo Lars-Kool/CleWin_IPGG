@@ -1,3 +1,8 @@
+// Set layer
+char currLayer[100];
+sprintf(currLayer, "#%i", (int)Layer);
+layer(currLayer);
+
 char buff[100];
 int N = 0;
 if (Length_path < Length) {
@@ -15,11 +20,13 @@ unityTM(&m_straight);
 symbol("Straight", &m_straight);
 parameter("Width", Width);
 parameter("Length", length_straight);
+parameter("Layer", Layer);
 
 translateTM(&m_straight, length_straight + 2*Radius*(N+1), 0);
 symbol("Straight", &m_straight);
 parameter("Width", Width);
 parameter("Length", length_straight);
+parameter("Layer", Layer);
 
 TM m_corner;                                                   
 unityTM(&m_corner);
@@ -28,6 +35,7 @@ symbol("Corner_smooth", &m_corner);
 parameter("Width", Width);                            
 parameter("Angle", 90);
 parameter("Radius", Radius);
+parameter("Layer", Layer);
 
 TM m_corner2;
 unityTM(&m_corner2);
@@ -41,6 +49,7 @@ translateTM(&m_corner2, length_straight + 2*Radius*(N+1), 0);
 symbol("Corner_smooth", &m_corner2);
 parameter("Angle", 90);
 parameter("Radius", Radius);
+parameter("Layer", Layer);
 
 TM m;
 unityTM(&m);
@@ -50,3 +59,4 @@ parameter("Height", Height);
 parameter("N", N);
 parameter("Radius", Radius);
 parameter("Width", Width);
+parameter("Layer", Layer);

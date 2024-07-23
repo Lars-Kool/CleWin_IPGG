@@ -1,3 +1,8 @@
+// Set layer
+char currLayer[100];
+sprintf(currLayer, "#%i", (int)Layer);
+layer(currLayer);
+
 double nodes[404];
 double amp = (Width_in - Width_out) / 4;
 double avg = (Width_in + Width_out) / 4;

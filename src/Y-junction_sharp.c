@@ -1,3 +1,8 @@
+// Set layer
+char currLayer[100];
+sprintf(currLayer, "#%i", (int)Layer);
+layer(currLayer);
+
 double a_rad_1 = fabs(Angle_1)*M_PI/180.0;
 double a_rad_2 = fabs(Angle_2)*M_PI/180.0;
 if (Width_out_1 < Width_out_2) {
@@ -17,6 +22,7 @@ translateTM(&m_1, 0, Width_in/2 - Width_out_1/2);
 symbol("Wedge", &m_1);
 parameter("Width", Width_out_1);
 parameter("Angle", Angle_1);
+parameter("Layer", Layer);
 
 double offset = Width_out_1 * tan(a_rad_1/2) - Width_out_2 * tan(a_rad_2/2);
 TM m_2;
@@ -25,6 +31,7 @@ translateTM(&m_2, offset, -Width_in/2 + Width_out_2/2);
 symbol("Wedge", &m_2);
 parameter("Width", Width_out_2);
 parameter("Angle", -Angle_2);
+parameter("Layer", Layer);
 
 rectangle(0, -Width_in/2, offset, -Width_in/2 + Width_out_2);
 

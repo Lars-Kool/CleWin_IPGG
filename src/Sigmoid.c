@@ -1,3 +1,8 @@
+// Set layer
+char currLayer[100];
+sprintf(currLayer, "#%i", (int)Layer);
+layer(currLayer);
+
 void sigmoid(double* x, int size) {
     int i = 0;
     x[0] = 0;

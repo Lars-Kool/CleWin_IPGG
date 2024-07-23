@@ -1,3 +1,8 @@
+// Set layer
+char currLayer[100];
+sprintf(currLayer, "#%i", (int)Layer);
+layer(currLayer);
+
 double nodes[8];
 nodes[0] = 0;
 nodes[1] = -Width_in/2;

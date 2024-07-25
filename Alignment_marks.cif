@@ -1,0 +1,512 @@
+(CIF written by CleWin 5.1);
+(FPGG - Labex IPGG);
+(29 Rue d'Ulm);
+(75005 Paris);
+(France);
+(Layer names);
+L L0; (CleWin: 0 0/0f808000 0f808000);
+L L1; (CleWin: 1 1/0fe08080 0fe08080);
+L L2; (CleWin: 2 2/0f60e060 0f60e060);
+(Symbol definitions);
+DS1 100 1;
+9 Cross_2_layer;
+(C5Param Width 4072c00000000000 4014000000000000 40c3880000000000);
+(C5Param Height 4072c00000000000 4014000000000000 40c3880000000000);
+(C5Param Line_width 3ff0000000000000 0 4059000000000000);
+(C5Param Layer 0 0 4059000000000000);
+(C5Param Layer2 3ff0000000000000 0 4059000000000000);
+L L0;
+(CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
+(CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
+(CleScript  0 0 9 9 2000000 1000 1087
+char layername[100];
+sprintf(layername, "#%i", (int)Layer);
+layer(layername);
+rectangle(-Width/6, -Height/2, Width/6, Height/2);
+rectangle(-Width/2, -Height/6, Width/2, Height/6);
+
+double nodes[4];
+nodes[0] = -Width/2;
+nodes[1] = Height/2;
+nodes[2] = Width/2;
+nodes[3] = -Height/2;
+wire(2, 0, Line_width, nodes);
+
+double temp = nodes[1];
+nodes[1] = nodes[3];
+nodes[3] = temp;
+wire(2, 0, Line_width, nodes);
+
+double nodes_rectangle[12];
+nodes_rectangle[0] = -Width/2;
+nodes_rectangle[1] = Height/2;
+nodes_rectangle[2] = Width/2;
+nodes_rectangle[3] = Height/2;
+nodes_rectangle[4] = Width/2;
+nodes_rectangle[5] = -Height/2;
+nodes_rectangle[6] = -Width/2;
+nodes_rectangle[7] = -Height/2;
+nodes_rectangle[8] = -Width/2;
+nodes_rectangle[9] = Height/2;
+wire(5, 0, Line_width, nodes_rectangle);
+
+sprintf(layername, "#%i", (int)Layer2);
+layer(layername);
+rectangle(-Width/2, Height/2, -Width/6, Height/6);
+rectangle(Width/6, Height/2, Width/2, Height/6);
+rectangle(-Width/2, -Height/6, -Width/6, -Height/2);
+rectangle(Width/6, -Height/6, Width/2, -Height/2);
+);
+B 100 300 0 0;
+B 300 100 0 0;
+(CleWireStyle 0);
+W 1 -150 150 150 -150;
+W 1 -150 -150 150 150;
+W 1 -150 150 150 150 150 -150 -150 -150 -150 150;
+L L1;
+B 100 100 -100 100;
+B 100 100 100 100;
+B 100 100 -100 -100;
+B 100 100 100 -100;
+DF;
+DS5 100 1;
+9 $C5PSymbol1_5;
+(C5Param Width 4072c00000000000 4014000000000000 40c3880000000000);
+(C5Param Height 4072c00000000000 4014000000000000 40c3880000000000);
+(C5Param Line_width 4014000000000000 0 4059000000000000);
+(C5Param Layer 3ff0000000000000 0 4059000000000000);
+(C5Param Layer2 0 0 4059000000000000);
+L L0;
+(CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
+(CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
+(CleScript  0 0 9 9 2000000 1000 1087
+char layername[100];
+sprintf(layername, "#%i", (int)Layer);
+layer(layername);
+rectangle(-Width/6, -Height/2, Width/6, Height/2);
+rectangle(-Width/2, -Height/6, Width/2, Height/6);
+
+double nodes[4];
+nodes[0] = -Width/2;
+nodes[1] = Height/2;
+nodes[2] = Width/2;
+nodes[3] = -Height/2;
+wire(2, 0, Line_width, nodes);
+
+double temp = nodes[1];
+nodes[1] = nodes[3];
+nodes[3] = temp;
+wire(2, 0, Line_width, nodes);
+
+double nodes_rectangle[12];
+nodes_rectangle[0] = -Width/2;
+nodes_rectangle[1] = Height/2;
+nodes_rectangle[2] = Width/2;
+nodes_rectangle[3] = Height/2;
+nodes_rectangle[4] = Width/2;
+nodes_rectangle[5] = -Height/2;
+nodes_rectangle[6] = -Width/2;
+nodes_rectangle[7] = -Height/2;
+nodes_rectangle[8] = -Width/2;
+nodes_rectangle[9] = Height/2;
+wire(5, 0, Line_width, nodes_rectangle);
+
+sprintf(layername, "#%i", (int)Layer2);
+layer(layername);
+rectangle(-Width/2, Height/2, -Width/6, Height/6);
+rectangle(Width/6, Height/2, Width/2, Height/6);
+rectangle(-Width/2, -Height/6, -Width/6, -Height/2);
+rectangle(Width/6, -Height/6, Width/2, -Height/2);
+);
+L L1;
+B 100 300 0 0;
+B 300 100 0 0;
+(CleWireStyle 0);
+W 5 -150 150 150 -150;
+W 5 -150 -150 150 150;
+W 5 -150 150 150 150 150 -150 -150 -150 -150 150;
+L L0;
+B 100 100 -100 100;
+B 100 100 100 100;
+B 100 100 -100 -100;
+B 100 100 100 -100;
+DF;
+DS2 1 1;
+9 Cross_3_layer;
+(C5Param Layer1 0 0 4059000000000000);
+(C5Param Layer2 3ff0000000000000 0 4059000000000000);
+(C5Param Layer3 4000000000000000 0 4059000000000000);
+(C5Param Width 408f400000000000 4014000000000000 40c3880000000000);
+(C5Param Height 408f400000000000 4014000000000000 40c3880000000000);
+(C5Param Line_width 4039000000000000 4014000000000000 40c3880000000000);
+L L0;
+(CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
+(CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
+(CleScript  0 0 26 26 2000000 1000 2289
+char currLayer[100];
+// First layer
+sprintf(currLayer, "#%i", (int)Layer1);
+layer(currLayer);
+// Horizontal line
+rectangle(-0.4*Width, -Line_width/2, 0.4*Width, Line_width/2);
+rectangle(-0.45*Width, -3*Line_width/2, -0.4*Width, 3*Line_width/2);
+rectangle(0.45*Width, -3*Line_width/2, 0.4*Width, 3*Line_width/2);
+rectangle(-0.5*Width, -5*Line_width/2, -0.45*Width, 5*Line_width/2);
+rectangle(0.5*Width, -5*Line_width/2, 0.45*Width, 5*Line_width/2);
+// Vertical line
+rectangle(-Line_width/2, 0.4*Height, Line_width/2, -0.4*Height);
+rectangle(-3*Line_width/2, -0.4*Height, 3*Line_width/2, -0.45*Height);
+rectangle(-3*Line_width/2, 0.4*Height, 3*Line_width/2, 0.45*Height);
+rectangle(-5*Line_width/2, -0.45*Height, 5*Line_width/2, -0.5*Height);
+rectangle(-5*Line_width/2, 0.45*Height, 5*Line_width/2, 0.5*Height);
+
+// Second layer
+sprintf(currLayer, "#%i", (int)Layer2);
+layer(currLayer);
+// Top-left L
+rectangle(-0.4*Width, 3*Line_width/2, -Line_width/2, Line_width/2);
+rectangle(-3*Line_width/2, 0.4*Height, -Line_width/2, Line_width/2);
+// Top-right L
+rectangle(0.4*Width, 3*Line_width/2, Line_width/2, Line_width/2);
+rectangle(3*Line_width/2, 0.4*Height, Line_width/2, Line_width/2);
+// Bottom-left L
+rectangle(-0.4*Width, -3*Line_width/2, -Line_width/2, -Line_width/2);
+rectangle(-3*Line_width/2, -0.4*Height, -Line_width/2, -Line_width/2);
+// Top-right L
+rectangle(0.4*Width, -3*Line_width/2, Line_width/2, -Line_width/2);
+rectangle(3*Line_width/2, -0.4*Height, Line_width/2, -Line_width/2);
+
+
+// Third layer
+sprintf(currLayer, "#%i", (int)Layer3);
+layer(currLayer);
+// Top-left L
+rectangle(-0.45*Width, 5*Line_width/2, -3*Line_width/2, 3*Line_width/2);
+rectangle(-5*Line_width/2, 0.45*Height, -3*Line_width/2, 3*Line_width/2);
+// Top-right L
+rectangle(0.45*Width, 5*Line_width/2, 3*Line_width/2, 3*Line_width/2);
+rectangle(5*Line_width/2, 0.45*Height, 3*Line_width/2, 3*Line_width/2);
+// Bottom-left L
+rectangle(-0.45*Width, -5*Line_width/2, -3*Line_width/2, -3*Line_width/2);
+rectangle(-5*Line_width/2, -0.45*Height, -3*Line_width/2, -3*Line_width/2);
+// Top-right L
+rectangle(0.45*Width, -5*Line_width/2, 3*Line_width/2, -3*Line_width/2);
+rectangle(5*Line_width/2, -0.45*Height, 3*Line_width/2, -3*Line_width/2);
+
+
+
+
+
+
+
+
+
+
+
+);
+B 80000 2500 0 0;
+B 5000 7500 -42500 0;
+B 5000 7500 42500 0;
+B 5000 12500 -47500 0;
+B 5000 12500 47500 0;
+B 2500 80000 0 0;
+B 7500 5000 0 -42500;
+B 7500 5000 0 42500;
+B 12500 5000 0 -47500;
+B 12500 5000 0 47500;
+L L1;
+B 38750 2500 -20625 2500;
+B 2500 38750 -2500 20625;
+B 38750 2500 20625 2500;
+B 2500 38750 2500 20625;
+B 38750 2500 -20625 -2500;
+B 2500 38750 -2500 -20625;
+B 38750 2500 20625 -2500;
+B 2500 38750 2500 -20625;
+L L2;
+B 41250 2500 -24375 5000;
+B 2500 41250 -5000 24375;
+B 41250 2500 24375 5000;
+B 2500 41250 5000 24375;
+B 41250 2500 -24375 -5000;
+B 2500 41250 -5000 -24375;
+B 41250 2500 24375 -5000;
+B 2500 41250 5000 -24375;
+DF;
+DS3 1 10;
+9 Comb_3_layer;
+(C5Param Layer1 0 0 4059000000000000);
+(C5Param Layer2 3ff0000000000000 0 4059000000000000);
+(C5Param Layer3 4000000000000000 0 4059000000000000);
+(C5Param Line_width 4024000000000000 4000000000000000 40c3880000000000);
+(C5Param Height1 4069000000000000 4014000000000000 40c3880000000000);
+(C5Param Height2 4049000000000000 4014000000000000 40c3880000000000);
+(C5Param N 402a000000000000 4008000000000000 4059400000000000);
+(C5Param Spacing1 3ff8000000000000 3ff0000000000000 4000000000000000);
+(C5Param Spacing2 3ff0000000000000 3ff0000000000000 4000000000000000);
+L L0;
+(CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
+(CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
+(CleScript  0 0 21 21 2000000 1000 1575
+TM m1;
+unityTM(&m1);
+symbol("Comb", &m1);
+parameter("N", N);
+parameter("Spacing", Spacing1);
+parameter("Line_width", Line_width);
+parameter("Height", Height1);
+parameter("Layer", Layer1);
+
+Spacing2 = 1.6*Spacing1/1.5;
+
+TM m2;
+unityTM(&m2);
+rotateTM(&m2, 0, 0, 180);
+translateTM(&m2, 0, -(Height1 - Height2 - 2*Line_width)/4);
+symbol("Comb", &m2);
+parameter("N", N);
+parameter("Spacing", Spacing2);
+parameter("Line_width", Line_width);
+parameter("Height", Height2);
+parameter("Layer", Layer2);
+
+TM m3;
+unityTM(&m3);
+rotateTM(&m3, 0, 0, 180);
+translateTM(&m3, 0, ((Height1-Line_width)/2 + (Height2-Line_width)/4));
+symbol("Comb", &m3);
+parameter("N", N);
+parameter("Spacing", Spacing2);
+parameter("Line_width", Line_width);
+parameter("Height", Height2);
+parameter("Layer", Layer3);
+
+char currLayer[100];
+// First layer
+sprintf(currLayer, "#%i", (int)Layer1);
+layer(currLayer);
+
+double nodes[6];
+nodes[0] = 0;
+nodes[1] = -Height1/2 - Line_width;
+nodes[2] = -3*Line_width/2;
+nodes[3] = -Height1/2 - 5*Line_width;
+nodes[4] = 3*Line_width/2;
+nodes[5] = -Height1/2 - 5*Line_width;
+polygon(3, nodes);
+
+// Third layer
+sprintf(currLayer, "#%i", (int)Layer3);
+layer(currLayer);
+
+nodes[1] = -nodes[1] + 2*Height2/3;
+nodes[3] = -nodes[3] + 2*Height2/3;
+nodes[5] = -nodes[5] + 2*Height2/3;
+polygon(3, nodes);
+
+// Second layer
+sprintf(currLayer, "#%i", (int)Layer2);
+layer(currLayer);
+rectangle(
+    -1.5*Line_width,
+    3*Height2/4 - Height1/4 + Line_width/2,
+    1.5*Line_width,
+    3*Height2/4 - Height1/4 + 3*Line_width);
+);
+C 6 T 0 0;
+(C5Param N 402a000000000000 0 0);
+(C5Param Spacing 3ff8000000000000 0 0);
+(C5Param Line_width 4024000000000000 0 0);
+(C5Param Height 4069000000000000 0 0);
+(C5Param Layer 0 0 0);
+C 7 R -30000 0 T 0 -32500;
+(C5Param N 402a000000000000 0 0);
+(C5Param Spacing 3ff999999999999b 0 0);
+(C5Param Line_width 4024000000000000 0 0);
+(C5Param Height 4049000000000000 0 0);
+(C5Param Layer 3ff0000000000000 0 0);
+C 8 R -30000 0 T 0 105000;
+(C5Param N 402a000000000000 0 0);
+(C5Param Spacing 3ff999999999999b 0 0);
+(C5Param Line_width 4024000000000000 0 0);
+(C5Param Height 4049000000000000 0 0);
+(C5Param Layer 4000000000000000 0 0);
+P 0 -110000 -15000 -150000 15000 -150000;
+L L2;
+P 0 143333 -15000 183333 15000 183333;
+L L1;
+B 30000 25000 0 5000;
+DF;
+DS4 10 1;
+9 Comb;
+(C5Param Layer 0 0 4059000000000000);
+(C5Param Line_width 4024000000000000 4014000000000000 40c3880000000000);
+(C5Param Height 4062c00000000000 4014000000000000 40c3880000000000);
+(C5Param N 402a000000000000 3ff0000000000000 4059000000000000);
+(C5Param Spacing 3ff8000000000000 3ff0000000000000 4000000000000000);
+L L0;
+(CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
+(CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
+(CleScript  0 0 14 14 2000000 1000 403
+char currLayer[100];
+Spacing += 1;
+// First layer
+sprintf(currLayer, "#%i", (int)Layer);
+layer(currLayer);
+
+rectangle(-(floor(N/2)*Spacing+0.5)*Line_width, -Height/2, (floor(N/2)*Spacing+0.5)*Line_width, Line_width-Height/2);
+
+int i = 0;
+for (i = 0; i < (int)N; i++) {
+    rectangle(-(floor(N/2 - i)*Spacing+0.5)*Line_width, Height/2, -(floor(N/2 - i)*Spacing-0.5)*Line_width, -Height/2);
+}
+);
+B 3100 100 0 -700;
+B 100 1500 -1500 0;
+B 100 1500 -1250 0;
+B 100 1500 -1000 0;
+B 100 1500 -750 0;
+B 100 1500 -500 0;
+B 100 1500 -250 0;
+B 100 1500 0 0;
+B 100 1500 250 0;
+B 100 1500 500 0;
+B 100 1500 750 0;
+B 100 1500 1000 0;
+B 100 1500 1250 0;
+B 100 1500 1500 0;
+DF;
+DS6 10 1;
+9 $C5PSymbol4_6;
+(C5Param Layer 0 0 4059000000000000);
+(C5Param Line_width 4024000000000000 4014000000000000 40c3880000000000);
+(C5Param Height 4069000000000000 4014000000000000 40c3880000000000);
+(C5Param N 402a000000000000 3ff0000000000000 4059000000000000);
+(C5Param Spacing 3ff8000000000000 3ff0000000000000 4000000000000000);
+L L0;
+(CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
+(CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
+(CleScript  0 0 14 14 2000000 1000 403
+char currLayer[100];
+Spacing += 1;
+// First layer
+sprintf(currLayer, "#%i", (int)Layer);
+layer(currLayer);
+
+rectangle(-(floor(N/2)*Spacing+0.5)*Line_width, -Height/2, (floor(N/2)*Spacing+0.5)*Line_width, Line_width-Height/2);
+
+int i = 0;
+for (i = 0; i < (int)N; i++) {
+    rectangle(-(floor(N/2 - i)*Spacing+0.5)*Line_width, Height/2, -(floor(N/2 - i)*Spacing-0.5)*Line_width, -Height/2);
+}
+);
+B 3100 100 0 -950;
+B 100 2000 -1500 0;
+B 100 2000 -1250 0;
+B 100 2000 -1000 0;
+B 100 2000 -750 0;
+B 100 2000 -500 0;
+B 100 2000 -250 0;
+B 100 2000 0 0;
+B 100 2000 250 0;
+B 100 2000 500 0;
+B 100 2000 750 0;
+B 100 2000 1000 0;
+B 100 2000 1250 0;
+B 100 2000 1500 0;
+DF;
+DS7 10 1;
+9 $C5PSymbol4_7;
+(C5Param Layer 3ff0000000000000 0 4059000000000000);
+(C5Param Line_width 4024000000000000 4014000000000000 40c3880000000000);
+(C5Param Height 4049000000000000 4014000000000000 40c3880000000000);
+(C5Param N 402a000000000000 3ff0000000000000 4059000000000000);
+(C5Param Spacing 3ff999999999999b 3ff0000000000000 4000000000000000);
+L L0;
+(CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
+(CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
+(CleScript  0 0 14 14 2000000 1000 403
+char currLayer[100];
+Spacing += 1;
+// First layer
+sprintf(currLayer, "#%i", (int)Layer);
+layer(currLayer);
+
+rectangle(-(floor(N/2)*Spacing+0.5)*Line_width, -Height/2, (floor(N/2)*Spacing+0.5)*Line_width, Line_width-Height/2);
+
+int i = 0;
+for (i = 0; i < (int)N; i++) {
+    rectangle(-(floor(N/2 - i)*Spacing+0.5)*Line_width, Height/2, -(floor(N/2 - i)*Spacing-0.5)*Line_width, -Height/2);
+}
+);
+L L1;
+B 3220 100 0 -200;
+B 100 500 -1560 0;
+B 100 500 -1300 0;
+B 100 500 -1040 0;
+B 100 500 -780 0;
+B 100 500 -520 0;
+B 100 500 -260 0;
+B 100 500 0 0;
+B 100 500 260 0;
+B 100 500 520 0;
+B 100 500 780 0;
+B 100 500 1040 0;
+B 100 500 1300 0;
+B 100 500 1560 0;
+DF;
+DS8 10 1;
+9 $C5PSymbol4_8;
+(C5Param Layer 4000000000000000 0 4059000000000000);
+(C5Param Line_width 4024000000000000 4014000000000000 40c3880000000000);
+(C5Param Height 4049000000000000 4014000000000000 40c3880000000000);
+(C5Param N 402a000000000000 3ff0000000000000 4059000000000000);
+(C5Param Spacing 3ff999999999999b 3ff0000000000000 4000000000000000);
+L L0;
+(CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
+(CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
+(CleScript  0 0 14 14 2000000 1000 403
+char currLayer[100];
+Spacing += 1;
+// First layer
+sprintf(currLayer, "#%i", (int)Layer);
+layer(currLayer);
+
+rectangle(-(floor(N/2)*Spacing+0.5)*Line_width, -Height/2, (floor(N/2)*Spacing+0.5)*Line_width, Line_width-Height/2);
+
+int i = 0;
+for (i = 0; i < (int)N; i++) {
+    rectangle(-(floor(N/2 - i)*Spacing+0.5)*Line_width, Height/2, -(floor(N/2 - i)*Spacing-0.5)*Line_width, -Height/2);
+}
+);
+L L2;
+B 3220 100 0 -200;
+B 100 500 -1560 0;
+B 100 500 -1300 0;
+B 100 500 -1040 0;
+B 100 500 -780 0;
+B 100 500 -520 0;
+B 100 500 -260 0;
+B 100 500 0 0;
+B 100 500 260 0;
+B 100 500 520 0;
+B 100 500 780 0;
+B 100 500 1040 0;
+B 100 500 1300 0;
+B 100 500 1560 0;
+DF;
+(Top level);
+DS9 1 10;
+9 MainSymbol;
+C 5 T -1600000 300000;
+(C5Param Width 4072c00000000000 4014000000000000 40c3880000000000);
+(C5Param Height 4072c00000000000 4014000000000000 40c3880000000000);
+(C5Param Line_width 4014000000000000 0 4059000000000000);
+(C5Param Layer 3ff0000000000000 0 4059000000000000);
+(C5Param Layer2 0 0 4059000000000000);
+C 2 T 200000 0;
+C 3 T 600000 -800000;
+C 3 R 0 30000 T 1016667 -383333;
+DF;
+C 9;
+E

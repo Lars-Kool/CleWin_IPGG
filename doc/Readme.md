@@ -237,6 +237,21 @@ Smoothly shifting the channel up/down by a (center-to-center) distance of Height
 
 <img src="../rsc/Shift_smooth.png" width=300/>
 
+## Shift_angled
+
+Smoothly connecting two parts of a channel given the distance along the x-axis (Length) and y-axis (Height) and angles of the two channels. The angles are defined as the angle of the direction vector compared to the x-axis, where a clockwise rotation is noted as a positive angle, and a anti-clockwise rotation is defined as a negative angle.
+
+- Width:    Width of the channel (5 <= Width <= 10000)
+- Height:   Vertical displacement (5 <= Height <= 10000)
+- Width:    Horizontal displacment (5 <= Width <= 10000)
+- Angle\_1: Angle of the inlet (-90 <= Angle\_1 <= 10000)
+- Angle\_2: Angle of the outlet (-90 <= Angle\_2 <= 10000)
+- Radius:   Radius of curvature (5 <= Radius <= 10000)
+- Layer:    Index of the layer (0 <= Layer <= 255)
+
+<img src="../rsc/Shift_angled.png" width=300/>
+<img src="../rsc/Shift_angled_zoom.png" width=300/>
+
 ## Herringbones
 
 Creates an array of herringbone channels for mixing. Note that the snapping works across layer!

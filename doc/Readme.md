@@ -261,5 +261,31 @@ Creates an array of herringbone channels for mixing. Note that the snapping work
 - Spacing:  Distance between the herringbones (5 <= Spacing <= 10000)
 - N_per_group:  Number of herrinbones in a group, i.e. cluster with the same orientation (1 <= N_per_group <= 100)
 - N_groups: Number of groups, each group is a mirror along x of the previous group (1 <= N_groups <= 100)
+- Layer:    Index of the layer (0 <= Layer <= 255)
 
 <img src="../rsc/Herringbones.png" width=300/>
+
+## Spiral-part
+
+Creates part of a spiral.
+
+- Width:    Width of the channel (5 <= Width <= 10000)
+- Radius:   Distance of center of spiral to center of the start of the spiral (5 <= Radius <= 10000)
+- Spacing:  Increment radius per revolution (5 <= Spacing <= 10000)
+- Angle:    Angle of the spiral (0 <= Angle <= 360, 360 is a full revolution)
+- Layer:    Index of the layer (0 <= Layer <= 255)
+
+<img src="../rsc/Spiral_part.png" width=300/>
+
+## Spiral
+
+Creates a spiral.
+
+- Radius:   Distance of center of spiral to center of the start of the spiral (5 <= Radius <= 10000)
+- Spacing:  Increment in radius per revolution (5 <= Spacing <= 10000)
+- Width:    Width of the channel (5 <= Width <= 10000)
+- N:        Number of revolutions (0 <= N <= 100, can be decimal numbers, which will result in partial revolutions)
+- Layer:    Index of the layer (0 <= Layer <= 255)
+
+<img src="../rsc/Spiral.png" width=300/>
+

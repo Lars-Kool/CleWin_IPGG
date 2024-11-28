@@ -144,8 +144,8 @@ B 400 100 200 0;
 (C5Snap 0 0 180);
 (C5Snap 400 0 0);
 DF;
-DS32 100 1;
-9 $C5PSymbol2_32;
+DS33 100 1;
+9 $C5PSymbol2_33;
 (C5Param Width 4059000000000000 4014000000000000 407f400000000000);
 (C5Param Length 4072c00000000000 4049000000000000 40c3880000000000);
 (C5Param Layer 0 0 406fe00000000000);
@@ -166,8 +166,8 @@ B 300 100 150 0;
 (C5Snap 0 0 180);
 (C5Snap 300 0 0);
 DF;
-DS33 1 1;
-9 $C5PSymbol2_33;
+DS34 1 1;
+9 $C5PSymbol2_34;
 (C5Param Width 4059000000000000 4014000000000000 407f400000000000);
 (C5Param Length 40a4f6902b1c2c6f 4049000000000000 40c3880000000000);
 (C5Param Layer 0 0 406fe00000000000);
@@ -187,6 +187,28 @@ snapnode(Length,0,0);
 B 268328 10000 134164 0;
 (C5Snap 0 0 180);
 (C5Snap 268328 0 0);
+DF;
+DS35 1 10;
+9 $C5PSymbol2_35;
+(C5Param Width 4059000000000000 4014000000000000 407f400000000000);
+(C5Param Length 4090dc490f3d28ee 4049000000000000 40c3880000000000);
+(C5Param Layer 0 0 406fe00000000000);
+L L0;
+(CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
+(CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
+(CleScript  0 0 3 3 2000000 10000 179
+// Set layer
+char currLayer[100];
+sprintf(currLayer, "#%i", (int)Layer);
+layer(currLayer);
+
+rectangle(0,-Width/2,Length,Width/2);
+snapnode(0,0,180);
+snapnode(Length,0,0);
+);
+B 1079070 100000 539535 0;
+(C5Snap 0 0 180);
+(C5Snap 1079070 0 0);
 DF;
 DS3 10000 1;
 9 Corner_smooth;
@@ -225,8 +247,8 @@ C 16 T 0 0;
 (C5Snap 0 0 180);
 (C5Snap 1 1 90);
 DF;
-DS34 10000 1;
-9 $C5PSymbol3_34;
+DS36 10000 1;
+9 $C5PSymbol3_36;
 (C5Param Width 4059000000000000 4014000000000000 407f400000000000);
 (C5Param Radius 4069000000000000 4014000000000000 407f400000000000);
 (C5Param Angle 4056800000000000 c066800000000000 4066800000000000);
@@ -254,7 +276,7 @@ parameter("Layer", Layer);
 snapnode(0,0,180);
 snapnode(Radius*sin(a_radians),sign*(Radius*cos(a_radians)-Radius),Angle);                                                                       
 );
-C 48 T 0 0;
+C 52 T 0 0;
 (C5Param Angle 4056800000000000 0 0);
 (C5Param Width 4059000000000000 0 0);
 (C5Param Radius 4069000000000000 0 0);
@@ -262,8 +284,8 @@ C 48 T 0 0;
 (C5Snap 0 0 180);
 (C5Snap 2 2 90);
 DF;
-DS35 10000 1;
-9 $C5PSymbol3_35;
+DS37 10000 1;
+9 $C5PSymbol3_37;
 (C5Param Width 4059000000000000 4014000000000000 407f400000000000);
 (C5Param Radius 4059000000000000 4014000000000000 407f400000000000);
 (C5Param Angle 4066800000000000 c066800000000000 4066800000000000);
@@ -291,87 +313,13 @@ parameter("Layer", Layer);
 snapnode(0,0,180);
 snapnode(Radius*sin(a_radians),sign*(Radius*cos(a_radians)-Radius),Angle);                                                                       
 );
-C 43 T 0 0;
+C 47 T 0 0;
 (C5Param Angle 4066800000000000 0 0);
 (C5Param Width 4059000000000000 0 0);
 (C5Param Radius 4059000000000000 0 0);
 (C5Param Layer 0 0 0);
 (C5Snap 0 0 180);
 (C5Snap 0 2 180);
-DF;
-DS36 1 10;
-9 $C5PSymbol3_36;
-(C5Param Width 4059000000000000 4014000000000000 407f400000000000);
-(C5Param Radius 4059000000000000 4014000000000000 407f400000000000);
-(C5Param Angle c0471ffcd96ece55 c066800000000000 4066800000000000);
-(C5Param Layer 0 0 406fe00000000000);
-L L0;
-(CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
-(CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 7 7 2000000 10000 507
-// Set layer
-char currLayer[100];
-sprintf(currLayer, "#%i", (int)Layer);
-layer(currLayer);
-
-double a_radians = fabs(Angle)*M_PI/180.0;
-double sign = (Angle>0) ? -1.0 : 1.0;
-
-TM m;
-unityTM(&m);
-symbol("Bend", &m);
-parameter("Angle", Angle);
-parameter("Width", Width);
-parameter("Radius", Radius);
-parameter("Layer", Layer);
-
-snapnode(0,0,180);
-snapnode(Radius*sin(a_radians),sign*(Radius*cos(a_radians)-Radius),Angle);                                                                       
-);
-C 44 T 0 0;
-(C5Param Angle c0471ffcb923a29c 0 0);
-(C5Param Width 4059000000000000 0 0);
-(C5Param Radius 4059000000000000 0 0);
-(C5Param Layer 0 0 0);
-(C5Snap 0 0 180);
-(C5Snap 72236 -30849 -46.2499);
-DF;
-DS37 1 10;
-9 $C5PSymbol3_37;
-(C5Param Width 4059000000000000 4014000000000000 407f400000000000);
-(C5Param Radius 4059000000000000 4014000000000000 407f400000000000);
-(C5Param Angle 40471ffcd96ece55 c066800000000000 4066800000000000);
-(C5Param Layer 0 0 406fe00000000000);
-L L0;
-(CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
-(CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 7 7 2000000 10000 507
-// Set layer
-char currLayer[100];
-sprintf(currLayer, "#%i", (int)Layer);
-layer(currLayer);
-
-double a_radians = fabs(Angle)*M_PI/180.0;
-double sign = (Angle>0) ? -1.0 : 1.0;
-
-TM m;
-unityTM(&m);
-symbol("Bend", &m);
-parameter("Angle", Angle);
-parameter("Width", Width);
-parameter("Radius", Radius);
-parameter("Layer", Layer);
-
-snapnode(0,0,180);
-snapnode(Radius*sin(a_radians),sign*(Radius*cos(a_radians)-Radius),Angle);                                                                       
-);
-C 45 T 0 0;
-(C5Param Angle 40471ffcb923a29c 0 0);
-(C5Param Width 4059000000000000 0 0);
-(C5Param Radius 4059000000000000 0 0);
-(C5Param Layer 0 0 0);
-(C5Snap 0 0 180);
-(C5Snap 72236 30849 46.2499);
 DF;
 DS38 10000 1;
 9 $C5PSymbol3_38;
@@ -402,13 +350,161 @@ parameter("Layer", Layer);
 snapnode(0,0,180);
 snapnode(Radius*sin(a_radians),sign*(Radius*cos(a_radians)-Radius),Angle);                                                                       
 );
-C 49 T 0 0;
+C 53 T 0 0;
 (C5Param Angle 4066800000000000 0 0);
 (C5Param Width 4059000000000000 0 0);
 (C5Param Radius 4069000000000000 0 0);
 (C5Param Layer 0 0 0);
 (C5Snap 0 0 180);
 (C5Snap 0 4 180);
+DF;
+DS39 1 10;
+9 $C5PSymbol3_39;
+(C5Param Width 4059000000000000 4014000000000000 407f400000000000);
+(C5Param Radius 4059000000000000 4014000000000000 407f400000000000);
+(C5Param Angle c0471ffcd96ece55 c066800000000000 4066800000000000);
+(C5Param Layer 0 0 406fe00000000000);
+L L0;
+(CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
+(CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
+(CleScript  0 0 7 7 2000000 10000 507
+// Set layer
+char currLayer[100];
+sprintf(currLayer, "#%i", (int)Layer);
+layer(currLayer);
+
+double a_radians = fabs(Angle)*M_PI/180.0;
+double sign = (Angle>0) ? -1.0 : 1.0;
+
+TM m;
+unityTM(&m);
+symbol("Bend", &m);
+parameter("Angle", Angle);
+parameter("Width", Width);
+parameter("Radius", Radius);
+parameter("Layer", Layer);
+
+snapnode(0,0,180);
+snapnode(Radius*sin(a_radians),sign*(Radius*cos(a_radians)-Radius),Angle);                                                                       
+);
+C 48 T 0 0;
+(C5Param Angle c0471ffcb923a29c 0 0);
+(C5Param Width 4059000000000000 0 0);
+(C5Param Radius 4059000000000000 0 0);
+(C5Param Layer 0 0 0);
+(C5Snap 0 0 180);
+(C5Snap 72236 -30849 -46.2499);
+DF;
+DS40 1 10;
+9 $C5PSymbol3_40;
+(C5Param Width 4059000000000000 4014000000000000 407f400000000000);
+(C5Param Radius 4059000000000000 4014000000000000 407f400000000000);
+(C5Param Angle 40471ffcd96ece55 c066800000000000 4066800000000000);
+(C5Param Layer 0 0 406fe00000000000);
+L L0;
+(CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
+(CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
+(CleScript  0 0 7 7 2000000 10000 507
+// Set layer
+char currLayer[100];
+sprintf(currLayer, "#%i", (int)Layer);
+layer(currLayer);
+
+double a_radians = fabs(Angle)*M_PI/180.0;
+double sign = (Angle>0) ? -1.0 : 1.0;
+
+TM m;
+unityTM(&m);
+symbol("Bend", &m);
+parameter("Angle", Angle);
+parameter("Width", Width);
+parameter("Radius", Radius);
+parameter("Layer", Layer);
+
+snapnode(0,0,180);
+snapnode(Radius*sin(a_radians),sign*(Radius*cos(a_radians)-Radius),Angle);                                                                       
+);
+C 49 T 0 0;
+(C5Param Angle 40471ffcb923a29c 0 0);
+(C5Param Width 4059000000000000 0 0);
+(C5Param Radius 4059000000000000 0 0);
+(C5Param Layer 0 0 0);
+(C5Snap 0 0 180);
+(C5Snap 72236 30849 46.2499);
+DF;
+DS41 1 10;
+9 $C5PSymbol3_41;
+(C5Param Width 4059000000000000 4014000000000000 407f400000000000);
+(C5Param Radius 4062c00000000000 4014000000000000 407f400000000000);
+(C5Param Angle c059e3392f4fa34a c066800000000000 4066800000000000);
+(C5Param Layer 0 0 406fe00000000000);
+L L0;
+(CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
+(CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
+(CleScript  0 0 7 7 2000000 10000 507
+// Set layer
+char currLayer[100];
+sprintf(currLayer, "#%i", (int)Layer);
+layer(currLayer);
+
+double a_radians = fabs(Angle)*M_PI/180.0;
+double sign = (Angle>0) ? -1.0 : 1.0;
+
+TM m;
+unityTM(&m);
+symbol("Bend", &m);
+parameter("Angle", Angle);
+parameter("Width", Width);
+parameter("Radius", Radius);
+parameter("Layer", Layer);
+
+snapnode(0,0,180);
+snapnode(Radius*sin(a_radians),sign*(Radius*cos(a_radians)-Radius),Angle);                                                                       
+);
+C 54 T 0 0;
+(C5Param Angle c059e33333333333 0 0);
+(C5Param Width 4059000000000000 0 0);
+(C5Param Radius 4062c00000000000 0 0);
+(C5Param Layer 0 0 0);
+(C5Snap 0 0 180);
+(C5Snap 145825 -185144 -103.55);
+DF;
+DS42 1 10;
+9 $C5PSymbol3_42;
+(C5Param Width 4059000000000000 4014000000000000 407f400000000000);
+(C5Param Radius 4062c00000000000 4014000000000000 407f400000000000);
+(C5Param Angle c05623392f4fa34a c066800000000000 4066800000000000);
+(C5Param Layer 0 0 406fe00000000000);
+L L0;
+(CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
+(CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
+(CleScript  0 0 7 7 2000000 10000 507
+// Set layer
+char currLayer[100];
+sprintf(currLayer, "#%i", (int)Layer);
+layer(currLayer);
+
+double a_radians = fabs(Angle)*M_PI/180.0;
+double sign = (Angle>0) ? -1.0 : 1.0;
+
+TM m;
+unityTM(&m);
+symbol("Bend", &m);
+parameter("Angle", Angle);
+parameter("Width", Width);
+parameter("Radius", Radius);
+parameter("Layer", Layer);
+
+snapnode(0,0,180);
+snapnode(Radius*sin(a_radians),sign*(Radius*cos(a_radians)-Radius),Angle);                                                                       
+);
+C 55 T 0 0;
+(C5Param Angle c0562339c0ebedfa 0 0);
+(C5Param Width 4059000000000000 0 0);
+(C5Param Radius 4062c00000000000 0 0);
+(C5Param Layer 0 0 0);
+(C5Snap 0 0 180);
+(C5Snap 149952 -146205 -88.5504);
 DF;
 DS6 1 10;
 9 Mask;
@@ -465,7 +561,7 @@ snapnode(
     Angle
 );
 );
-C 40 T 0 0;
+C 44 T 0 0;
 (C5Param Width 4059000000000000 0 0);
 (C5Param Angle c046800000000000 0 0);
 (C5Snap 0 0 180);
@@ -517,8 +613,8 @@ R 2000 2 0;
 B 1000 100 502 0;
 (C5Snap 1002 0 0);
 DF;
-DS39 100 1;
-9 $C5PSymbol9_39;
+DS43 100 1;
+9 $C5PSymbol9_43;
 (C5Param Radius 408f400000000000 4014000000000000 40c3880000000000);
 (C5Param Width 4059000000000000 4014000000000000 40c3880000000000);
 (C5Param Layer 3ff0000000000000 0 406fe00000000000);
@@ -703,8 +799,8 @@ polygon(4, nodes);
 );
 P 0 -50000 0 50000 70711 -20711 41421 -50000;
 DF;
-DS40 1 10;
-9 $C5PSymbol15_40;
+DS44 1 10;
+9 $C5PSymbol15_44;
 (C5Param Width 4059000000000000 4014000000000000 40c3880000000000);
 (C5Param Angle c046800000000000 c056800000000000 4056800000000000);
 (C5Param Layer 0 0 406fe00000000000);
@@ -732,8 +828,8 @@ polygon(4, nodes);
 );
 P 0 50000 0 -50000 70711 20711 41421 50000;
 DF;
-DS41 1 10;
-9 $C5PSymbol15_41;
+DS45 1 10;
+9 $C5PSymbol15_45;
 (C5Param Width 4052c00000000000 4014000000000000 40c3880000000000);
 (C5Param Angle 4046800000000000 c056800000000000 4056800000000000);
 (C5Param Layer 0 0 406fe00000000000);
@@ -761,8 +857,8 @@ polygon(4, nodes);
 );
 P 0 -37500 0 37500 53033 -15533 31066 -37500;
 DF;
-DS42 1 10;
-9 $C5PSymbol15_42;
+DS46 1 10;
+9 $C5PSymbol15_46;
 (C5Param Width 4039000000000000 4014000000000000 40c3880000000000);
 (C5Param Angle c039000000000000 c056800000000000 4056800000000000);
 (C5Param Layer 0 0 406fe00000000000);
@@ -860,8 +956,8 @@ P 0 50000 882 50008 1765 50031 2646 50070 3527 50125
  23727 -48112 21109 -48507 18485 -48857 15855 -49160 13220 -49416
  10581 -49626 7939 -49790 5294 -49907 2647 -49977 0 -50000;
 DF;
-DS43 1 10;
-9 $C5PSymbol16_43;
+DS47 1 10;
+9 $C5PSymbol16_47;
 (C5Param Angle 4066800000000000 c066800000000000 4066800000000000);
 (C5Param Radius 4059000000000000 4014000000000000 40c3880000000000);
 (C5Param Width 4059000000000000 4014000000000000 40c3880000000000);
@@ -930,8 +1026,8 @@ P 0 50000 1765 50031 3527 50125 5285 50280 7036 50498
  46856 -42494 41798 -44059 36688 -45444 31532 -46648 26337 -47670
  21109 -48507 15855 -49160 10581 -49626 5294 -49907 0 -50000;
 DF;
-DS44 1 10;
-9 $C5PSymbol16_44;
+DS48 1 10;
+9 $C5PSymbol16_48;
 (C5Param Angle c0471ffcb923a29c c066800000000000 4066800000000000);
 (C5Param Radius 4059000000000000 4014000000000000 40c3880000000000);
 (C5Param Width 4059000000000000 4014000000000000 40c3880000000000);
@@ -1000,8 +1096,8 @@ P 0 -50000 453 -50002 907 -50008 1360 -50019 1814 -50033
  12231 49501 10874 49605 9517 49698 8159 49778 6800 49846
  5441 49901 4081 49944 2721 49975 1360 49994 0 50000;
 DF;
-DS45 1 10;
-9 $C5PSymbol16_45;
+DS49 1 10;
+9 $C5PSymbol16_49;
 (C5Param Angle 40471ffcb923a29c c066800000000000 4066800000000000);
 (C5Param Radius 4059000000000000 4014000000000000 40c3880000000000);
 (C5Param Width 4059000000000000 4014000000000000 40c3880000000000);
@@ -1070,8 +1166,8 @@ P 0 50000 453 50002 907 50008 1360 50019 1814 50033
  12231 -49501 10874 -49605 9517 -49698 8159 -49778 6800 -49846
  5441 -49901 4081 -49944 2721 -49975 1360 -49994 0 -50000;
 DF;
-DS46 1 10;
-9 $C5PSymbol16_46;
+DS50 1 10;
+9 $C5PSymbol16_50;
 (C5Param Angle 4054000000000000 c066800000000000 4066800000000000);
 (C5Param Radius 4059000000000000 4014000000000000 40c3880000000000);
 (C5Param Width 4050400000000000 4014000000000000 40c3880000000000);
@@ -1140,8 +1236,8 @@ P 0 32500 1059 32508 2118 32533 3176 32575 4233 32633
  18646 -31181 16586 -31458 14522 -31702 12454 -31913 10383 -32093
  8309 -32239 6234 -32353 4157 -32435 2079 -32484 0 -32500;
 DF;
-DS47 1 10;
-9 $C5PSymbol16_47;
+DS51 1 10;
+9 $C5PSymbol16_51;
 (C5Param Angle c039000000000000 c066800000000000 4066800000000000);
 (C5Param Radius 4052c00000000000 4014000000000000 40c3880000000000);
 (C5Param Width 4041800000000000 4014000000000000 40c3880000000000);
@@ -1210,8 +1306,8 @@ P 0 -17500 282 -17501 564 -17503 846 -17506 1128 -17511
  4080 17410 3627 17429 3174 17446 2721 17460 2267 17472
  1814 17482 1360 17490 907 17496 453 17499 0 17500;
 DF;
-DS48 1 10;
-9 $C5PSymbol16_48;
+DS52 1 10;
+9 $C5PSymbol16_52;
 (C5Param Angle 4056800000000000 c066800000000000 4066800000000000);
 (C5Param Radius 4069000000000000 4014000000000000 40c3880000000000);
 (C5Param Width 4059000000000000 4014000000000000 40c3880000000000);
@@ -1280,8 +1376,8 @@ P 0 50000 2647 50023 5294 50093 7939 50210 10581 50374
  39544 -46853 35182 -47512 30808 -48094 26425 -48600 22033 -49027
  17635 -49377 13231 -49650 8823 -49844 4412 -49961 0 -50000;
 DF;
-DS49 1 10;
-9 $C5PSymbol16_49;
+DS53 1 10;
+9 $C5PSymbol16_53;
 (C5Param Angle 4066800000000000 c066800000000000 4066800000000000);
 (C5Param Radius 4069000000000000 4014000000000000 40c3880000000000);
 (C5Param Width 4059000000000000 4014000000000000 40c3880000000000);
@@ -1350,6 +1446,146 @@ P 0 50000 5294 50093 10581 50374 15855 50840 21109 51493
  78093 -37490 69663 -40098 61146 -42407 52553 -44414 43895 -46116
  35182 -47512 26425 -48600 17635 -49377 8823 -49844 0 -50000;
 DF;
+DS54 1 10;
+9 $C5PSymbol16_54;
+(C5Param Angle c059e33333333333 c066800000000000 4066800000000000);
+(C5Param Radius 4062c00000000000 4014000000000000 40c3880000000000);
+(C5Param Width 4059000000000000 4014000000000000 40c3880000000000);
+(C5Param Layer 0 0 406fe00000000000);
+L L0;
+(CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
+(CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
+(CleScript  0 0 1 1 2000000 10000 571
+// Set layer
+char currLayer[100];
+sprintf(currLayer, "#%i", (int)Layer);
+layer(currLayer);
+
+double a_radians = fabs(Angle)*M_PI/180.0;
+double sign = (Angle>0) ? -1.0 : 1.0;
+int num = 90;
+double nodes[360];
+double ri = Radius-Width/2;
+double ro = Radius+Width/2;
+int i;
+double a = 0.0;
+double astep = a_radians/(num-1);
+for(i=0; i<num; i++) {
+    nodes[2*i] = ri*sin(a);
+    nodes[2*i+1] = sign*(ri*cos(a)-Radius);
+    nodes[4*num-2-2*i] = ro*sin(a);
+    nodes[4*num-2-2*i+1] = sign*(ro*cos(a)-Radius);
+    a += astep;
+}
+polygon(2*num,nodes);       
+);
+P 0 -50000 2031 -50021 4060 -50082 6088 -50186 8114 -50330
+ 10136 -50515 12154 -50741 14167 -51009 16174 -51317 18174 -51665
+ 20167 -52055 22152 -52484 24127 -52954 26093 -53464 28048 -54014
+ 29991 -54603 31922 -55232 33840 -55900 35743 -56606 37632 -57351
+ 39506 -58134 41363 -58956 43203 -59814 45026 -60710 46829 -61643
+ 48614 -62612 50378 -63617 52122 -64658 53844 -65734 55544 -66844
+ 57221 -67989 58874 -69168 60504 -70380 62108 -71625 63686 -72902
+ 65239 -74212 66764 -75552 68262 -76923 69732 -78324 71173 -79755
+ 72585 -81214 73966 -82702 75318 -84218 76638 -85761 77926 -87330
+ 79183 -88926 80407 -90546 81597 -92191 82754 -93860 83877 -95552
+ 84965 -97266 86019 -99002 87037 -100759 88018 -102537 88964 -104334
+ 89873 -106150 90745 -107984 91579 -109835 92376 -111703 93135 -113586
+ 93855 -115485 94536 -117398 95179 -119324 95782 -121263 96346 -123214
+ 96870 -125176 97354 -127148 97798 -129129 98201 -131119 98565 -133117
+ 98887 -135122 99169 -137133 99410 -139149 99609 -141170 99768 -143195
+ 99886 -145222 99962 -147251 99997 -149281 99991 -151312 99944 -153342
+ 99856 -155371 99726 -157397 99555 -159421 99343 -161440 99091 -163455
+ 98797 -165464 98463 -167467 98088 -169463 97672 -171451 97217 -173429
+ 194433 -196859 195345 -192901 196175 -188926 196925 -184934 197594 -180929
+ 198181 -176910 198687 -172880 199111 -168841 199452 -164794 199711 -160741
+ 199888 -156684 199983 -152624 199995 -148563 199924 -144502 199772 -140444
+ 199536 -136389 199219 -132340 198819 -128299 198338 -124266 197774 -120244
+ 197129 -116234 196403 -112239 195596 -108258 194708 -104295 193740 -100351
+ 192691 -96428 191564 -92526 190357 -88648 189072 -84796 187709 -80970
+ 186269 -77173 184752 -73405 183159 -69670 181490 -65967 179746 -62299
+ 177928 -58668 176037 -55074 174073 -51519 172037 -48004 169931 -44532
+ 167754 -41103 165509 -37720 163195 -34382 160813 -31092 158366 -27851
+ 155853 -24661 153276 -21522 150635 -18436 147933 -15405 145169 -12429
+ 142346 -9509 139464 -6648 136524 -3846 133529 -1104 130478 1577
+ 127373 4195 124216 6750 121007 9240 117749 11664 114442 14021
+ 111088 16311 107688 18533 104244 20685 100756 22766 97228 24776
+ 93659 26715 90051 28580 86407 30372 82726 32089 79012 33731
+ 75265 35298 71487 36788 67679 38201 63844 39536 59982 40793
+ 56096 41972 52186 43072 48255 44091 44304 45031 40335 45891
+ 36349 46669 32348 47367 28334 47983 24308 48517 20272 48970
+ 16227 49341 12176 49629 8120 49835 4061 49959 0 50000;
+DF;
+DS55 1 10;
+9 $C5PSymbol16_55;
+(C5Param Angle c0562339c0ebedfa c066800000000000 4066800000000000);
+(C5Param Radius 4062c00000000000 4014000000000000 40c3880000000000);
+(C5Param Width 4059000000000000 4014000000000000 40c3880000000000);
+(C5Param Layer 0 0 406fe00000000000);
+L L0;
+(CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
+(CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
+(CleScript  0 0 1 1 2000000 10000 571
+// Set layer
+char currLayer[100];
+sprintf(currLayer, "#%i", (int)Layer);
+layer(currLayer);
+
+double a_radians = fabs(Angle)*M_PI/180.0;
+double sign = (Angle>0) ? -1.0 : 1.0;
+int num = 90;
+double nodes[360];
+double ri = Radius-Width/2;
+double ro = Radius+Width/2;
+int i;
+double a = 0.0;
+double astep = a_radians/(num-1);
+for(i=0; i<num; i++) {
+    nodes[2*i] = ri*sin(a);
+    nodes[2*i+1] = sign*(ri*cos(a)-Radius);
+    nodes[4*num-2-2*i] = ro*sin(a);
+    nodes[4*num-2-2*i+1] = sign*(ro*cos(a)-Radius);
+    a += astep;
+}
+polygon(2*num,nodes);       
+);
+P 0 -50000 1736 -50015 3472 -50060 5207 -50136 6940 -50241
+ 8672 -50377 10400 -50542 12126 -50738 13847 -50963 15565 -51219
+ 17278 -51504 18986 -51819 20688 -52163 22383 -52537 24072 -52941
+ 25754 -53373 27428 -53835 29094 -54326 30751 -54845 32398 -55394
+ 34036 -55971 35664 -56576 37281 -57209 38886 -57870 40480 -58560
+ 42062 -59276 43631 -60020 45187 -60792 46729 -61590 48257 -62414
+ 49771 -63266 51269 -64143 52752 -65046 54220 -65975 55671 -66929
+ 57105 -67908 58521 -68912 59921 -69941 61302 -70993 62664 -72069
+ 64008 -73169 65333 -74292 66637 -75438 67922 -76607 69186 -77797
+ 70430 -79009 71652 -80243 72852 -81498 74031 -82773 75187 -84069
+ 76320 -85384 77431 -86719 78518 -88073 79581 -89446 80621 -90837
+ 81636 -92246 82627 -93672 83592 -95115 84533 -96575 85448 -98051
+ 86337 -99543 87200 -101049 88037 -102571 88847 -104107 89631 -105656
+ 90387 -107219 91116 -108795 91818 -110384 92492 -111984 93138 -113596
+ 93756 -115219 94346 -116852 94908 -118495 95440 -120148 95944 -121810
+ 96419 -123480 96865 -125158 97282 -126844 97669 -128537 98027 -130236
+ 98356 -131941 98655 -133652 98924 -135367 99163 -137087 99372 -138811
+ 99551 -140538 99701 -142268 99820 -144001 99909 -145735 99968 -147470
+ 199936 -144940 199818 -141470 199640 -138001 199401 -134536 199103 -131076
+ 198744 -127622 198326 -124174 197847 -120734 197309 -117303 196712 -113882
+ 196055 -110472 195339 -107073 194564 -103688 193731 -100316 192839 -96960
+ 191889 -93619 190881 -90296 189815 -86990 188692 -83704 187513 -80437
+ 186277 -77192 184984 -73968 183636 -70768 182233 -67591 180774 -64439
+ 179261 -61313 177694 -58213 176074 -55142 174400 -52099 172674 -49085
+ 170895 -46102 169065 -43150 167185 -40231 165253 -37344 163272 -34492
+ 161242 -31674 159163 -28892 157036 -26146 154862 -23438 152641 -20768
+ 150374 -18137 148061 -15546 145704 -12995 143303 -10486 140859 -8019
+ 138373 -5594 135844 -3213 133275 -876 130665 1415 128016 3661
+ 125329 5861 122604 8014 119841 10119 117043 12176 114209 14184
+ 111341 16142 108439 18050 105505 19908 102539 21714 99542 23469
+ 96514 25171 93458 26821 90374 28417 87262 29959 84124 31447
+ 80961 32881 77773 34259 74561 35582 71328 36848 68073 38059
+ 64797 39213 61501 40309 58188 41348 54856 42330 51508 43253
+ 48145 44119 44767 44925 41375 45673 37971 46362 34556 46992
+ 31130 47562 27695 48073 24251 48524 20800 48915 17343 49247
+ 13881 49518 10414 49729 6945 49879 3473 49970 0 50000;
+DF;
 DS21 1 10;
 9 Y-junction_sharp;
 (C5Param Width_in 4059000000000000 4014000000000000 40c3880000000000);
@@ -1411,11 +1647,11 @@ snapnode(
     -Angle_2
 );
 );
-C 41 T 0 12500;
+C 45 T 0 12500;
 (C5Param Width 4052c00000000000 0 0);
 (C5Param Angle 4046800000000000 0 0);
 (C5Param Layer 0 0 0);
-C 42 T 25524 -37500;
+C 46 T 25524 -37500;
 (C5Param Width 4039000000000000 0 0);
 (C5Param Angle c039000000000000 0 0);
 (C5Param Layer 0 0 0);
@@ -1477,12 +1713,12 @@ snapnode(
     Radius_2*(cos(a_rad_2)-1) - (Width_in - Width_out_2)/2,
     -Angle_2);
 );
-C 46 T 0 17500;
+C 50 T 0 17500;
 (C5Param Width 4050400000000000 0 0);
 (C5Param Radius 4059000000000000 0 0);
 (C5Param Angle 4054000000000000 0 0);
 (C5Param Layer 0 0 0);
-C 47 T 0 -32500;
+C 51 T 0 -32500;
 (C5Param Width 4041800000000000 0 0);
 (C5Param Radius 4052c00000000000 0 0);
 (C5Param Angle c039000000000000 0 0);
@@ -1570,25 +1806,25 @@ parameter("Layer", Layer);
 snapnode(0, 0, 180);
 snapnode(Length, 0, 0);
 );
-C 32 T 0 0;
+C 33 T 0 0;
 (C5Param Width 4059000000000000 0 0);
 (C5Param Length 4072c00000000000 0 0);
 (C5Param Layer 0 0 0);
-C 32 T 270 0;
+C 33 T 270 0;
 (C5Param Width 4059000000000000 0 0);
 (C5Param Length 4072c00000000000 0 0);
 (C5Param Layer 0 0 0);
-C 34 T 30 0;
+C 36 T 30 0;
 (C5Param Width 4059000000000000 0 0);
 (C5Param Angle 4056800000000000 0 0);
 (C5Param Radius 4069000000000000 0 0);
 (C5Param Layer 0 0 0);
-C 34 MX T 270 0;
+C 36 MX T 270 0;
 (C5Param Angle 4056800000000000 0 0);
 (C5Param Radius 4069000000000000 0 0);
 (C5Param Layer 0 0 0);
 (C5Param Width 4059000000000000 0 0);
-C 51 T 45 0;
+C 57 T 45 0;
 (C5Param Height 40ab8c091840056e 0 0);
 (C5Param N 4014000000000000 0 0);
 (C5Param Radius 4069000000000000 0 0);
@@ -1630,7 +1866,7 @@ snapnode(Width/2 + 2*Radius, Radius, 270);
 );
 B 10 30 5 25;
 B 10 30 25 25;
-C 35 R 0 30000 T 25 40;
+C 37 R 0 30000 T 25 40;
 (C5Param Width 4059000000000000 0 0);
 (C5Param Angle 4066800000000000 0 0);
 (C5Param Radius 4059000000000000 0 0);
@@ -1638,8 +1874,8 @@ C 35 R 0 30000 T 25 40;
 (C5Snap 5 10 270);
 (C5Snap 25 10 270);
 DF;
-DS50 1 10;
-9 $C5PSymbol24_50;
+DS56 1 10;
+9 $C5PSymbol24_56;
 (C5Param Width 4059000000000000 4014000000000000 40c3880000000000);
 (C5Param Height 409b8c0a3d70a3d7 4014000000000000 40c3880000000000);
 (C5Param Radius 4069000000000000 4014000000000000 40c3880000000000);
@@ -1768,8 +2004,8 @@ B 10 20 85 0;
 (C5Snap 5 10 270);
 (C5Snap 105 10 270);
 DF;
-DS51 1000 1;
-9 $C5PSymbol25_51;
+DS57 1000 1;
+9 $C5PSymbol25_57;
 (C5Param Width 4059000000000000 4014000000000000 40c3880000000000);
 (C5Param Height 40ab8c091840056e 4014000000000000 40c3880000000000);
 (C5Param N 4014000000000000 3ff0000000000000 4059000000000000);
@@ -1825,27 +2061,27 @@ else {
 }
 
 );
-C 50 T 0 0;
+C 56 T 0 0;
 (C5Param Width 4059000000000000 0 0);
 (C5Param Height 409b8c0a3d70a3d7 0 0);
 (C5Param Radius 4069000000000000 0 0);
 (C5Param Layer 0 0 0);
-C 50 R -30000 0 T 90 0;
+C 56 MX MY T 90 0;
 (C5Param Width 4059000000000000 0 0);
 (C5Param Height 409b8c0a3d70a3d7 0 0);
 (C5Param Radius 4069000000000000 0 0);
 (C5Param Layer 0 0 0);
-C 50 T 80 0;
+C 56 T 80 0;
 (C5Param Width 4059000000000000 0 0);
 (C5Param Height 409b8c0a3d70a3d7 0 0);
 (C5Param Radius 4069000000000000 0 0);
 (C5Param Layer 0 0 0);
-C 50 R -30000 0 T 170 0;
+C 56 MX MY T 170 0;
 (C5Param Width 4059000000000000 0 0);
 (C5Param Height 409b8c0a3d70a3d7 0 0);
 (C5Param Radius 4069000000000000 0 0);
 (C5Param Layer 0 0 0);
-C 50 T 160 0;
+C 56 T 160 0;
 (C5Param Width 4059000000000000 0 0);
 (C5Param Height 409b8c0a3d70a3d7 0 0);
 (C5Param Radius 4069000000000000 0 0);
@@ -1963,16 +2199,16 @@ parameter("Layer", Layer);
 snapnode(0, 0, 180);
 snapnode(Length, -Height, 0);
 );
-C 36 T 0 0;
+C 39 T 0 0;
 (C5Param Radius 4059000000000000 0 0);
 (C5Param Width 4059000000000000 0 0);
 (C5Param Angle c0471ffcd96ece55 0 0);
 (C5Param Layer 0 0 0);
-C 33 R 20745 -21671 T 72236 -30849;
+C 34 R 20745 -21671 T 72236 -30849;
 (C5Param Length 40a4f6902b1c2c6f 0 0);
 (C5Param Width 4059000000000000 0 0);
 (C5Param Layer 0 0 0);
-C 37 R 20745 -21671 T 1927764 -1969151;
+C 40 R 20745 -21671 T 1927764 -1969151;
 (C5Param Radius 4059000000000000 0 0);
 (C5Param Width 4059000000000000 0 0);
 (C5Param Angle 40471ffcd96ece55 0 0);
@@ -2273,8 +2509,8 @@ P 1050000 0 1050470 36888 1049643 73810 1047517 110718 1044092 147568
 (C5Snap 1000000 0 -90);
 (C5Snap 1200000 0 450);
 DF;
-DS52 1 10;
-9 $C5PSymbol30_52;
+DS58 1 10;
+9 $C5PSymbol30_58;
 (C5Param Radius 408f400000000000 4014000000000000 40c3880000000000);
 (C5Param Spacing 4079000000000000 4014000000000000 40c3880000000000);
 (C5Param Width 4059000000000000 4014000000000000 40c3880000000000);
@@ -2384,8 +2620,8 @@ P 1050000 0 1051586 36928 1051872 73966 1050850 111070 1048518 148194
 (C5Snap 1000000 0 -90);
 (C5Snap 1400000 0 450);
 DF;
-DS53 1 10;
-9 $C5PSymbol30_53;
+DS59 1 10;
+9 $C5PSymbol30_59;
 (C5Param Radius 4095e00000000000 4014000000000000 40c3880000000000);
 (C5Param Spacing 4079000000000000 4014000000000000 40c3880000000000);
 (C5Param Width 4059000000000000 4014000000000000 40c3880000000000);
@@ -2495,8 +2731,8 @@ P 1450000 0 1451340 50965 1450887 102025 1448635 153115 1444581 204172
 (C5Snap 1400000 0 -90);
 (C5Snap 1800000 0 450);
 DF;
-DS54 1 10;
-9 $C5PSymbol30_54;
+DS60 1 10;
+9 $C5PSymbol30_60;
 (C5Param Radius 409c200000000000 4014000000000000 40c3880000000000);
 (C5Param Spacing 4079000000000000 4014000000000000 40c3880000000000);
 (C5Param Width 4059000000000000 4014000000000000 40c3880000000000);
@@ -2606,8 +2842,8 @@ P 1850000 0 1851094 65003 1849901 130083 1846419 195159 1840645 260150
 (C5Snap 1800000 0 -90);
 (C5Snap 2200000 0 450);
 DF;
-DS55 1 10;
-9 $C5PSymbol30_55;
+DS61 1 10;
+9 $C5PSymbol30_61;
 (C5Param Radius 40a1300000000000 4014000000000000 40c3880000000000);
 (C5Param Spacing 4079000000000000 4014000000000000 40c3880000000000);
 (C5Param Width 4059000000000000 4014000000000000 40c3880000000000);
@@ -2717,8 +2953,8 @@ P 2250000 0 2250847 79041 2248916 158141 2244203 237203 2236709 316128
 (C5Snap 2200000 0 -90);
 (C5Snap 2600000 0 450);
 DF;
-DS56 1 10;
-9 $C5PSymbol30_56;
+DS62 1 10;
+9 $C5PSymbol30_62;
 (C5Param Radius 40a4500000000000 4014000000000000 40c3880000000000);
 (C5Param Spacing 4079000000000000 4014000000000000 40c3880000000000);
 (C5Param Width 4059000000000000 4014000000000000 40c3880000000000);
@@ -2828,8 +3064,8 @@ P 2650000 0 2650601 93079 2647931 186199 2641987 279247 2632772 372106
 (C5Snap 2600000 0 -90);
 (C5Snap 3000000 0 450);
 DF;
-DS57 1 10;
-9 $C5PSymbol30_57;
+DS63 1 10;
+9 $C5PSymbol30_63;
 (C5Param Radius 40a7700000000000 4014000000000000 40c3880000000000);
 (C5Param Spacing 4079000000000000 4014000000000000 40c3880000000000);
 (C5Param Width 4059000000000000 4014000000000000 40c3880000000000);
@@ -2971,37 +3207,37 @@ snapnode(Radius, 0, -90);
 double d = Radius + Spacing*N;    
 snapnode(d*cos(2*M_PI*N), d*sin(2*M_PI*N), N*360+90);
 );
-C 52 T 0 0;
+C 58 T 0 0;
 (C5Param Radius 408f400000000000 0 0);
 (C5Param Spacing 4079000000000000 0 0);
 (C5Param Width 4059000000000000 0 0);
 (C5Param Angle 4076800000000000 0 0);
 (C5Param Layer 0 0 0);
-C 53 T 0 0;
+C 59 T 0 0;
 (C5Param Radius 4095e00000000000 0 0);
 (C5Param Spacing 4079000000000000 0 0);
 (C5Param Width 4059000000000000 0 0);
 (C5Param Angle 4076800000000000 0 0);
 (C5Param Layer 0 0 0);
-C 54 T 0 0;
+C 60 T 0 0;
 (C5Param Radius 409c200000000000 0 0);
 (C5Param Spacing 4079000000000000 0 0);
 (C5Param Width 4059000000000000 0 0);
 (C5Param Angle 4076800000000000 0 0);
 (C5Param Layer 0 0 0);
-C 55 T 0 0;
+C 61 T 0 0;
 (C5Param Radius 40a1300000000000 0 0);
 (C5Param Spacing 4079000000000000 0 0);
 (C5Param Width 4059000000000000 0 0);
 (C5Param Angle 4076800000000000 0 0);
 (C5Param Layer 0 0 0);
-C 56 T 0 0;
+C 62 T 0 0;
 (C5Param Radius 40a4500000000000 0 0);
 (C5Param Spacing 4079000000000000 0 0);
 (C5Param Width 4059000000000000 0 0);
 (C5Param Angle 4076800000000000 0 0);
 (C5Param Layer 0 0 0);
-C 57 T 0 0;
+C 63 T 0 0;
 (C5Param Radius 40a7700000000000 0 0);
 (C5Param Spacing 4079000000000000 0 0);
 (C5Param Width 4059000000000000 0 0);
@@ -3010,9 +3246,152 @@ C 57 T 0 0;
 (C5Snap 10 0 -90);
 (C5Snap -32 0 2070);
 DF;
+DS32 1 10;
+9 Shift_angled;
+(C5Param Length 408f400000000000 4014000000000000 40c3880000000000);
+(C5Param Height 408f400000000000 4014000000000000 40c3880000000000);
+(C5Param Width 4059000000000000 4014000000000000 40c3880000000000);
+(C5Param Angle_1 c046800000000000 c056800000000000 4056800000000000);
+(C5Param Angle_2 c03e000000000000 c056800000000000 4056800000000000);
+(C5Param Radius 4062c00000000000 4014000000000000 40c3880000000000);
+(C5Param Layer 0 0 406fe00000000000);
+L L0;
+(CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
+(CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
+(CleScript  0 0 18 18 2000000 10000 3539
+void get_tangent_parallel(double x1, double x2, double y1, double y2, bool above, double* output) {
+    double sign = (above) ? 1.0 : -1.0;
+    output[2] = atan2(y2-y1, x2-x1);
+    output[0] = sign*Radius*sin(fabs(output[2]));
+    output[1] = sign*Radius*cos(fabs(output[2]));
+}
+
+void get_tangent_diagonal(double x1, double x2, double y1, double y2, bool inverse, double* output) {
+    // Based on https://math.stackexchange.com/questions/543496/how-to-find-the-equation-of-a-line-tangent-to-a-circle-that-passes-through-a-g
+    double dx = (x2 - x1)/2, dy = (y2 - y1)/2;
+    double dxr = -dy, dyr = dx;
+    double d = sqrt(pow(dx,2) + pow(dy,2));
+    double rho = Radius/d;
+    double ad = pow(rho,2);   
+    double bd = rho*sqrt(1-pow(rho,2));
+
+    double Tx = (inverse) ? ad*dx - bd*dxr : ad*dx + bd*dxr;
+    double Ty = (inverse) ? ad*dy - bd*dyr : ad*dy + bd*dyr;
+    output[0] = Tx;
+    output[1] = Ty;
+    output[2] = atan2(dy-Ty, dx-Tx);
+}
+
+// Set layer
+char currLayer[100];
+sprintf(currLayer, "#%i", (int)Layer);
+layer(currLayer);
+
+double a_radians_1 = M_PI * fabs(Angle_1)/180;
+double a_radians_2 = M_PI * fabs(Angle_2)/180;
+
+double sign_1 = (Angle_1 > 0) ? 1.0 : -1.0;
+double x1 = -sign_1*Radius*sin(fabs(a_radians_1));
+double y1 = -Radius*cos(fabs(a_radians_1));
+
+double sign_2 = (Angle_2 > 0) ? 1.0 : -1.0;
+double x2 = Length + sign_2*Radius*sin(a_radians_2);
+double y2 = -Height + Radius*cos(a_radians_2);
+
+double T[3] = {0,0,0};
+get_tangent_diagonal(x1, x2, y1, y2, false, T);
+double theta = 180*T[2]/M_PI;
+
+bool diagonal = false;
+double T2[3] = {0,0,0};
+if (Angle_1 <= -theta && Angle_2 <= -theta) {
+    diagonal = true;
+    get_tangent_diagonal(x2, x1, y2, y1, false, T2);
+}
+else if (Angle_1 > -theta && Angle_2 <= -theta) {
+    // Both nodes below center of circle
+    x1 = Radius*sin(a_radians_1);
+    y1 = Radius*cos(a_radians_1);
+    get_tangent_parallel(x1, x2, y1, y2, false, T);
+    theta = 180*T[2]/M_PI;
+}
+else if (Angle_1 <= -theta && Angle_2 > -theta) {
+    // Both nodes above center of circle
+    x2 = Length - Radius*sin(a_radians_2);
+    y2 = -Height - Radius*cos(a_radians_2);
+    get_tangent_parallel(x1, x2, y1, y2, true, T);
+    theta = 180*T[2]/M_PI;
+}
+else {
+    // Inverse diagonal
+    diagonal = true;
+    x1 = Radius*sin(a_radians_1);
+    y1 = Radius*cos(a_radians_1);
+    x2 = Length - Radius*sin(a_radians_2);
+    y2 = -Height - Radius*cos(a_radians_2);
+    get_tangent_diagonal(x1, x2, y1, y2, true, T);
+    get_tangent_diagonal(x2, x1, y2, y1, true, T2);
+    theta = 180*T[2]/M_PI;
+}
+
+double T1x = x1 + T[0];
+double T1y = y1 + T[1];
+double T2x = (diagonal) ? (x2 + T2[0]) : x2 + T[0];
+double T2y = (diagonal) ? (y2 + T2[1]) : y2 + T[1];
+
+snapnode(0,0,180-Angle_1);
+snapnode(Length,-Height,-Angle_2);
+snapnode(T1x, T1y, theta);
+snapnode(T2x, T2y, 90-theta);
+
+TM m;
+unityTM(&m);
+rotateTM(&m, 0, 0, -Angle_1);
+symbol("Corner_smooth", &m);
+parameter("Angle", theta + Angle_1);
+parameter("Radius", Radius);
+parameter("Width", 100);
+parameter("Layer", Layer);
+
+unityTM(&m);
+rotateTM(&m, 0, 0, 180-Angle_2);
+translateTM(&m, Length, -Height);
+symbol("Corner_smooth", &m);
+parameter("Angle", Angle_2+theta);
+parameter("Radius", Radius);
+parameter("Width", 100);
+parameter("Layer", Layer);
+
+unityTM(&m);
+rotateTM(&m, 0, 0, theta);
+translateTM(&m, T1x, T1y);
+symbol("Straight", &m);
+parameter("Width", 100);
+parameter("Length", sqrt(pow(T2x-T1x,2) + pow(T2y-T1y,2)));
+parameter("Layer", Layer);
+);
+(C5Snap 0 0 225);
+(C5Snap 1000000 -1000000 30);
+(C5Snap 234031 -27804 -58.550365283748);
+(C5Snap 797035 -948359 148.550365283748);
+C 41 R 21213 21213 T 0 0;
+(C5Param Angle c059e3392f4fa34a 0 0);
+(C5Param Radius 4062c00000000000 0 0);
+(C5Param Width 4059000000000000 0 0);
+(C5Param Layer 0 0 0);
+C 42 R -25981 -15000 T 1000000 -1000000;
+(C5Param Angle c05623392f4fa34a 0 0);
+(C5Param Radius 4062c00000000000 0 0);
+(C5Param Width 4059000000000000 0 0);
+(C5Param Layer 0 0 0);
+C 35 R 15652 -25593 T 234031 -27804;
+(C5Param Width 4059000000000000 0 0);
+(C5Param Length 4090dc490f3d28ee 0 0);
+(C5Param Layer 0 0 0);
+DF;
 (Top level);
-DS58 100000 1;
+DS64 100000 1;
 9 MainSymbol;
 DF;
-C 58;
+C 64;
 E

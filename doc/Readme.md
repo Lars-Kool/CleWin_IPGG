@@ -243,9 +243,9 @@ Smoothly connecting two parts of a channel given the distance along the x-axis (
 
 - Width:    Width of the channel (5 <= Width <= 10000)
 - Height:   Vertical displacement (5 <= Height <= 10000)
-- Width:    Horizontal displacment (5 <= Width <= 10000)
-- Angle\_1: Angle of the inlet (-90 <= Angle\_1 <= 10000)
-- Angle\_2: Angle of the outlet (-90 <= Angle\_2 <= 10000)
+- Length:    Horizontal displacment (5 <= Width <= 10000)
+- Angle\_1: Angle of the inlet (-90 <= Angle\_1 <= 90)
+- Angle\_2: Angle of the outlet (-90 <= Angle\_2 <= 90)
 - Radius:   Radius of curvature (5 <= Radius <= 10000)
 - Layer:    Index of the layer (0 <= Layer <= 255)
 

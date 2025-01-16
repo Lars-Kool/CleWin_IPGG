@@ -70,12 +70,13 @@ A couple tips on scripting (in C) that were not immediately obvious to me:
 
 Below are the descriptions of the basic shapes included in the library, including the parameters that define them. All parameter ranges are given in micrometers, unless stated otherwise. **It is possible that some of the shapes are not visible, that is because CleWin includes them as sub-symbols of other symbols. Make sure you have all symbols expanded**
 Also, symbols will not be drawn on the currently active layer. Rather, they will be drawn on the layer indicated by the index-parameter "Layer", which should be an integer (non-integers will be rounded down). I have not found a convenient way to change the layer of a group of symbols, so make sure you set the Layer correctly. Note, if the provided layer index does not exist, it will be created automatically.
+Furthermore, several symbols have a constraint based on another parameter, e.g. "Radius >= Width/2". This constraint is not enforced by CleWin, despite leading to undefined behavior. It is up to the user to correctly provide the values.
 
 ## Straight
 
-A straight line piece of constant width. Snapnodes are placed along the centerline.
-- Width :   Width of the channel (5 <= Width <= 10000)
-- Length:   Lenght of the channel (5 <= Width <= 10000)
+A straight line piece of constant width. Snapnodes are placed along the centerline at both ends.
+- Width :   Width of the channel (1 <= Width <= 100 000)
+- Length:   Length of the channel (1 <= Length <= 100 000)
 - Layer:    Index of the layer (0 <= Layer <= 255)
 
 <img src="../rsc/Straight.png" alt="straight" width=300px/>
@@ -83,7 +84,7 @@ A straight line piece of constant width. Snapnodes are placed along the centerli
 ## Corner_sharp
 
 A sharp corner with constant width of the in and outgoing channel. Snapnodes are placed at the centerline of the in- and outgoing channel.
-- Width:    Width of the channel (5 <= Width <= 10000)
+- Width:    Width of the channel (1 <= Width <= 100 000)
 - Angle:    Angle of the corner (-90 <= Angle <= 90)
 - Layer:    Index of the layer (0 <= Layer <= 255)
 
@@ -92,9 +93,9 @@ A sharp corner with constant width of the in and outgoing channel. Snapnodes are
 ## Corner_smooth
 
 A smooth corner with constant width, snapnodes are placed along the centerline of the in- and outgoing channel.
-- Width:    Width of the channel (5 <= Width <= 10000)
+- Width:    Width of the channel (1 <= Width <= 100 000)
 - Angle:    Angle of rotation of the bend (-180 <= Angle <= 180, in degrees).
-- Radius:   Radius of the centerline of the bend (5 <= Radius <= 10000 and Radius >= Width/2)
+- Radius:   Radius of the centerline of the bend (1 <= Radius <= 100 000 and Radius >= Width/2)
 - Layer:    Index of the layer (0 <= Layer <= 255)
 
 <img src="../rsc/Corner_smooth.png" width=250px/>
@@ -102,9 +103,9 @@ A smooth corner with constant width, snapnodes are placed along the centerline o
 ## Constriction_sharp
 
 A linear transition between two channel widths. Note that the output can also be wider than the input! Snapnodes are placed along the centerline.
-- Length:   Length of the transition (5 <= Length <= 10000)
-- Width_in: Width of the ingoing channel (5 <= Width_in <= 10000)
-- Width_out:    Width of the outgoing channel (5 <= Width_out <= 10000)
+- Length:   Length of the transition (1 <= Length <= 100 000)
+- Width_in: Width of the incoming channel (1 <= Width_in <= 100 000)
+- Width_out:    Width of the outgoing channel (1 <= Width_out <= 100 000)
 - Layer:    Index of the layer (0 <= Layer <= 255)
 
 <img src="../rsc/Constriction_sharp.png" width=250px/>
@@ -112,9 +113,9 @@ A linear transition between two channel widths. Note that the output can also be
 ## Constriction_smooth
 
 A smooth transition between two channel widths. Note that the output can also be wider than the input! Snapnodes are placed along the centerline.
-- Length:   Length of the transition (5 <= Length <= 10000)
-- Width_in: Width of the ingoing channel (5 <= Width_in <= 10000)
-- Width_out:    Width of the outgoing channel (5 <= Width_out <= 10000)
+- Length:   Length of the transition (1 <= Length <= 100 000)
+- Width_in: Width of the incoming channel (1 <= Width_in <= 100 000)
+- Width_out:    Width of the outgoing channel (1 <= Width_out <= 100 000)
 - Layer:    Index of the layer (0 <= Layer <= 255)
 
 <img src="../rsc/Constriction_smooth.png" width=200px/>
@@ -122,8 +123,8 @@ A smooth transition between two channel widths. Note that the output can also be
 ## InOutlet
 
 In- outlet. The circular area has a flat side to match the channel width. The snapnode is placed in the center of the flat side.
-- Radius:   Radius of the in/outlet (5 <= Radius <= 10000)
-- Width:    Width of the in/outgoing channel.
+- Radius:   Radius of the in/outlet (1 <= Radius <= 100 000)
+- Width:    Width of the in/outgoing channel (1 <= Width <= 100 000).
 - Layer:    Index of the layer (0 <= Layer <= 255)
 
 <img src="../rsc/In_outlet.png" width=200px/>
@@ -137,8 +138,8 @@ Outline for the mask. After drawing your design in the center, you can select ev
 ## T-junction
 
 Rectangular piece with 3-snapnodes, centered along 3 of the 4 sides of the rectangle.
-- Width:    Width of the rectangle (5 <= Width <= 10000)
-- Length:   Length of the rectangle (5 <= Length <= 10000)
+- Width:    Width of the rectangle (1 <= Width <= 100 000)
+- Length:   Length of the rectangle (1 <= Length <= 100 000)
 - Layer:    Index of the layer (0 <= Layer <= 255)
 
 <img src="../rsc/T_junction.png" width=200/>
@@ -146,8 +147,8 @@ Rectangular piece with 3-snapnodes, centered along 3 of the 4 sides of the recta
 ## X-junction
 
 Rectangular piece with 4 snapnodes, one centered on each of the 4 sides.
-- Width:    Width of the rectangle (5 <= Width <= 10000)
-- Length:   Length of the rectangle (5 <= Length <= 10000)
+- Width:    Width of the rectangle (1 <= Width <= 100 000)
+- Length:   Length of the rectangle (1 <= Length <= 100 000)
 - Layer:    Index of the layer (0 <= Layer <= 255)
 
 <img src="../rsc/X_junction.png" width=150px/>
@@ -155,11 +156,11 @@ Rectangular piece with 4 snapnodes, one centered on each of the 4 sides.
 ## Y-junction_sharp
 
 Y-junction, where both the angle and width of the output channels can be controlled separately. Snapnodes are placed at the center of the input channel, and the two output channels. Note: internally the biggest output will be placed on top to simplify the calculations. Should you want it on the bottom, you will have to mirror it, switching the output widths does not work.
-- Width_in:     Width of the input channel (5 <= Width_in <= 10000)
-- Width_out_1:  Width of the widest output channel (5 <= Width\_out\_1 <= 10000)
-- Width_out_2:  Width of the widest output channel (5 <= Width\_out\_2 <= 10000)
+- Width_in:     Width of the input channel (1 <= Width_in <= 100 000)
+- Width_out_1:  Width of the widest output channel (1 <= Width\_out\_1 <= 100 000)
+- Width_out_2:  Width of the narrowest output channel (1 <= Width\_out\_2 <= 100 000)
 - Angle_1:      Angle of the widest output channel (0 <= Angle\_1 <= 90)
-- Angle_2:      Angle of the widest output channel (0 <= Angle\_2 <= 90)
+- Angle_2:      Angle of the narrowest output channel (0 <= Angle\_2 <= 90)
 - Layer:    Index of the layer (0 <= Layer <= 255)
 
 <img src="../rsc/Y-junction_sharp.png" width=300px/>
@@ -167,11 +168,11 @@ Y-junction, where both the angle and width of the output channels can be control
 ## Y-junction_smooth
 
 Y-junction, where both the angle and width of the output channels can be controlled separately. Snapnodes are placed at the center of the input channel, and the two output channels.
-- Width_in:     Width of the input channel (5 <= Width_in <= 10000)
-- Width_out_1:  Width of the widest output channel (5 <= Width\_out\_1 <= 10000)
-- Width_out_2:  Width of the widest output channel (5 <= Width\_out\_2 <= 10000)
-- Angle_1:      Angle of the widest output channel (0 <= Angle\_1 <= 90)
-- Angle_2:      Angle of the widest output channel (0 <= Angle\_2 <= 90)
+- Width_in:     Width of the input channel (1 <= Width_in <= 100 000)
+- Width_out_1:  Width of the first output channel (1 <= Width\_out\_1 <= 100 000)
+- Width_out_2:  Width of the second output channel (1 <= Width\_out\_2 <= 100 000)
+- Angle_1:      Angle of the first output channel (0 <= Angle\_1 <= 90)
+- Angle_2:      Angle of the second output channel (0 <= Angle\_2 <= 90)
 - Layer:    Index of the layer (0 <= Layer <= 255)
 
 <img src="../rsc/Y-junction_smooth.png" width=300/>
@@ -179,8 +180,8 @@ Y-junction, where both the angle and width of the output channels can be control
 ## Split_N1_N2
 
 Straight section that splits N1 inputs into N2 outputs.
-- Length:   Length of the straight section (5 <= Length <= 10000)
-- Width:    Width of the straight section (5 <= Width <= 10000)
+- Length:   Length of the straight section (1 <= Length <= 100 000)
+- Width:    Width of the straight section (1 <= Width <= 100 000)
 - N1:       Number of inputs (1 <= N1 <= 100)
 - N2:       Number of outputs (1 <= N2 <= 100)
 - Layer:    Index of the layer (0 <= Layer <= 255)
@@ -190,19 +191,19 @@ Straight section that splits N1 inputs into N2 outputs.
 ## U-bend_smooth
 
 U-bend, can be combined into a serpentine channel (also see next symbol). Snapnodes are placed at the centerline of the channel. Note that this symbol is designed as a sub-symbol for a serpentine channel (see next symbol). As such, The actual height is less than the "Height" parameter, as it is expected that a Corner_smooth (```Width=Width, Radius=(Width+Spacing)/2, Angle=90```) is used to connect the U-bend to the circuit (see the dashed corner). Hence, the actual height is ```Height - Radius```
-- Width:    Width of the channel (5 <= Width <= 10000)
-- Height:   Height of the U-bend (5 <= Height <= 10000)
-- Radius:   Radius of the centerline of the bend (5 <= Radius <= 10000)
+- Width:    Width of the channel (1 <= Width <= 100 000)
+- Height:   Height of the U-bend (1 <= Height <= 100 000)
+- Radius:   Radius of the centerline of the bend (1 <= Radius <= 100 000)
 - Layer:    Index of the layer (0 <= Layer <= 255)
 
 <img src="../rsc/U-bend_smooth.png" width=150/>
 
 ## Serpentine_N
 
-Serpentine channel with U-bend_smooth corners. Snapnodes are placed at the centerline of the channel. The in- and output of the channel are placed off-center, such that a Corner_smooth (Width=Width, Radius=(Width+Spacing)/2, Angle=90) can be used to connect the serpentine to the circuit (see the dashed corners).
-- Width:    Width of the channel (5 <= Width <= 10000)
-- Height:   Height of the serpentine, centerline to centerline (5 <= Height <= 10000)
-- Radius:   Radius of the centerline of the bend (5 <= Radius <= 10000)
+Serpentine channel with U-bend_smooth corners. Snapnodes are placed at the centerline of the channel. The in- and output of the channel are placed off-center, such that a Corner_smooth (```Width=Width, Radius=(Width+Spacing)/2, Angle=90```) can be used to connect the serpentine to the circuit (see the dashed corners).
+- Width:    Width of the channel (1 <= Width <= 100 000)
+- Height:   Height of the serpentine, centerline to centerline (1 <= Height <= 100 000)
+- Radius:   Radius of the centerline of the bend (1 <= Radius <= 100 000)
 - N:        Number of U-bends (1 <= N <= 100)
 - Layer:    Index of the layer (0 <= Layer <= 255)
 
@@ -216,11 +217,11 @@ Serpentine channel with given length and length of the centerline. The number of
 
 ```Height = -(Length-Length_path+Radius*(PI-2))/N + 4*Radius - PI*Radius```
 
-- Width:    Width of the channel (5 <= Width <= 10000)
-- Height:   Height of the serpentine, U-bend to U-bend (4*Radius <= Height <= 10000)
-- Radius:   Radius of the centerline of the bend (5 <= Radius <= 10000)
-- Length:   Length of the section (5 <= Length <= 10000)
-- Length_path:  Length of the centerline (Length + (2*PI-4)Radius <= Length_path <= 10000)
+- Width:    Width of the channel (1 <= Width <= 100 000)
+- Height:   Height of the serpentine, U-bend to U-bend (4*Radius <= Height <= 100 000)
+- Radius:   Radius of the centerline of the bend (1 <= Radius <= 100 000)
+- Length:   Length of the section (1 <= Length <= 10000)
+- Length_path:  Length of the centerline (Length + (2*PI-4)Radius <= Length_path <= 100 000)
 - Layer:    Index of the layer (0 <= Layer <= 255)
 
 <img src="../rsc/Serpentine_L.png" width=300/>
@@ -229,10 +230,10 @@ Serpentine channel with given length and length of the centerline. The number of
 
 Smoothly shifting the channel up/down by a (center-to-center) distance of Height, over a distance Length of a channel of size Width using a curvature of radius Radius.
 
-- Width:    Width of the channel (5 <= Width <= 10000)
-- Height:   Vertical displacement (5 <= Height <= 10000)
-- Length:   Horizontal displacement (5 <= Length <= 10000)
-- Radius:   Radius of curvature (5 <= Radius <= 10000)
+- Width:    Width of the channel (1 <= Width <= 100 000)
+- Height:   Vertical displacement (1 <= Height <= 100 000)
+- Length:   Horizontal displacement (1 <= Length <= 100 000)
+- Radius:   Radius of curvature (1 <= Radius <= 100 000)
 - Layer:    Index of the layer (0 <= Layer <= 255)
 
 <img src="../rsc/Shift_smooth.png" width=300/>
@@ -241,12 +242,12 @@ Smoothly shifting the channel up/down by a (center-to-center) distance of Height
 
 Smoothly connecting two parts of a channel given the distance along the x-axis (Length) and y-axis (Height) and angles of the two channels. The angles are defined as the angle of the direction vector compared to the x-axis, where a clockwise rotation is noted as a positive angle, and a anti-clockwise rotation is defined as a negative angle.
 
-- Width:    Width of the channel (5 <= Width <= 10000)
-- Height:   Vertical displacement (5 <= Height <= 10000)
-- Length:    Horizontal displacment (5 <= Width <= 10000)
+- Width:    Width of the channel (1 <= Width <= 100 000)
+- Height:   Vertical displacement (1 <= Height <= 100 000)
+- Length:    Horizontal displacment (1 <= Width <= 100 000)
 - Angle\_1: Angle of the inlet (-90 <= Angle\_1 <= 90)
 - Angle\_2: Angle of the outlet (-90 <= Angle\_2 <= 90)
-- Radius:   Radius of curvature (5 <= Radius <= 10000)
+- Radius:   Radius of curvature (1 <= Radius <= 100 000)
 - Layer:    Index of the layer (0 <= Layer <= 255)
 
 <img src="../rsc/Shift_angled.png" width=300/>
@@ -256,9 +257,9 @@ Smoothly connecting two parts of a channel given the distance along the x-axis (
 
 Creates an array of herringbone channels for mixing. Note that the snapping works across layer!
 
-- Width:    Width of the channel (5 <= Width <= 10000)
-- Width_herringbone:    Width of the herrinbone (5 <= Width_herringbone <= 10000)
-- Spacing:  Distance between the herringbones (5 <= Spacing <= 10000)
+- Width:    Width of the channel (1 <= Width <= 100 000)
+- Width_herringbone:    Width of the herrinbone (1 <= Width_herringbone <= 100 000)
+- Spacing:  Distance between the herringbones (1 <= Spacing <= 100 000)
 - N_per_group:  Number of herrinbones in a group, i.e. cluster with the same orientation (1 <= N_per_group <= 100)
 - N_groups: Number of groups, each group is a mirror along x of the previous group (1 <= N_groups <= 100)
 - Layer:    Index of the layer (0 <= Layer <= 255)
@@ -269,9 +270,9 @@ Creates an array of herringbone channels for mixing. Note that the snapping work
 
 Creates part of a spiral.
 
-- Width:    Width of the channel (5 <= Width <= 10000)
-- Radius:   Distance of center of spiral to center of the start of the spiral (5 <= Radius <= 10000)
-- Spacing:  Increment radius per revolution (5 <= Spacing <= 10000)
+- Width:    Width of the channel (1 <= Width <= 10000)
+- Radius:   Distance of center of spiral to center of the start of the spiral (1 <= Radius <= 10000)
+- Spacing:  Increment radius per revolution (1 <= Spacing <= 10000)
 - Angle:    Angle of the spiral (0 <= Angle <= 360, 360 is a full revolution)
 - Layer:    Index of the layer (0 <= Layer <= 255)
 
@@ -281,9 +282,9 @@ Creates part of a spiral.
 
 Creates a spiral.
 
-- Radius:   Distance of center of spiral to center of the start of the spiral (5 <= Radius <= 10000)
-- Spacing:  Increment in radius per revolution (5 <= Spacing <= 10000)
-- Width:    Width of the channel (5 <= Width <= 10000)
+- Radius:   Distance of center of spiral to center of the start of the spiral (1 <= Radius <= 100 000)
+- Spacing:  Increment in radius per revolution (1 <= Spacing <= 100 000)
+- Width:    Width of the channel (1 <= Width <= 100 000)
 - N:        Number of revolutions (0 <= N <= 100, can be decimal numbers, which will result in partial revolutions)
 - Layer:    Index of the layer (0 <= Layer <= 255)
 

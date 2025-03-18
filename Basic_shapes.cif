@@ -1,7 +1,7 @@
-(CIF written by CleWin 5.1);
-(FPGG - Labex IPGG);
-(29 Rue d'Ulm);
-(75005 Paris);
+(CIF written by CleWin 6.1);
+(25310IPGG);
+(6 rue Jean Calvin);
+(75005 PARIS);
 (France);
 (Layer names);
 L L0; (CleWin: 0 0/0f808000 0f808000);
@@ -16,7 +16,7 @@ DS1 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 3 3 2000000 10000 1520
+(CleScript  0 0 3 3 2000000 10000 1460
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -130,7 +130,7 @@ DS2 100 1;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 3 3 2000000 10000 179
+(CleScript  0 0 3 3 2000000 10000 171
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -152,7 +152,7 @@ DS35 1000 1;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 3 3 2000000 10000 179
+(CleScript  0 0 3 3 2000000 10000 171
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -174,7 +174,7 @@ DS36 1 1;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 3 3 2000000 10000 179
+(CleScript  0 0 3 3 2000000 10000 171
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -196,7 +196,7 @@ DS37 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 3 3 2000000 10000 179
+(CleScript  0 0 3 3 2000000 10000 171
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -219,7 +219,7 @@ DS3 10000 1;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 7 7 2000000 10000 507
+(CleScript  0 0 7 7 2000000 10000 489
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -256,7 +256,7 @@ DS38 10000 1;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 7 7 2000000 10000 507
+(CleScript  0 0 7 7 2000000 10000 489
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -293,7 +293,7 @@ DS39 10000 1;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 7 7 2000000 10000 507
+(CleScript  0 0 7 7 2000000 10000 489
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -330,7 +330,7 @@ DS40 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 7 7 2000000 10000 507
+(CleScript  0 0 7 7 2000000 10000 489
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -367,7 +367,7 @@ DS41 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 7 7 2000000 10000 507
+(CleScript  0 0 7 7 2000000 10000 489
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -404,7 +404,7 @@ DS42 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 7 7 2000000 10000 507
+(CleScript  0 0 7 7 2000000 10000 489
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -441,7 +441,7 @@ DS43 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 7 7 2000000 10000 507
+(CleScript  0 0 7 7 2000000 10000 489
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -478,7 +478,7 @@ DS44 10000 1;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 7 7 2000000 10000 507
+(CleScript  0 0 7 7 2000000 10000 489
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -535,12 +535,12 @@ DS7 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 0 0 2000000 10000 42
+(CleScript  0 0 0 0 2000000 10000 41
                                         
 );
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 5 5 2000000 10000 415
+(CleScript  0 0 6 6 2000000 0 422
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -553,17 +553,18 @@ unityTM(&m);
 symbol("Wedge", &m);
 parameter("Width", Width);
 parameter("Angle", Angle);
+parameter("Layer", Layer);
 
 snapnode(0, 0, 180);
 snapnode(    
     sin(a_radians)*Width/2,
     sign * Width/2 - sign * cos(a_radians)*Width/2,
     Angle
-);
-);
+););
 C 45 T 0 0;
-(C5Param Width 4059000000000000 0 0);
-(C5Param Angle c046800000000000 0 0);
+(C5Param Width 4059000000000000 4059000000000000 4059000000000000);
+(C5Param Angle c046800000000000 c046800000000000 c046800000000000);
+(C5Param Layer 0 0 0);
 (C5Snap 0 0 180);
 (C5Snap 35355 -14645 -45);
 DF;
@@ -575,7 +576,7 @@ DS8 100 1;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 4 4 2000000 10000 220
+(CleScript  0 0 4 4 2000000 10000 211
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -599,7 +600,7 @@ DS9 100 1;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 1084178432 0 0);
-(CleScript  2 0 3 3 2000000 10000 187
+(CleScript  2 0 3 3 2000000 10000 179
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -621,7 +622,7 @@ DS10 100 1;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 5 5 2000000 10000 256
+(CleScript  0 0 5 5 2000000 10000 246
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -648,7 +649,7 @@ DS12 100 1;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 3 3 2000000 10000 352
+(CleScript  0 0 3 3 2000000 10000 335
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -680,7 +681,7 @@ DS13 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 3 3 2000000 10000 511
+(CleScript  0 0 3 3 2000000 10000 490
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -755,7 +756,7 @@ DS15 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 1 1 2000000 10000 462
+(CleScript  0 0 1 1 2000000 10000 445
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -784,7 +785,7 @@ DS45 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 1 1 2000000 10000 462
+(CleScript  0 0 1 1 2000000 0 445
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -813,7 +814,7 @@ DS46 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 1 1 2000000 10000 462
+(CleScript  0 0 1 1 2000000 0 445
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -842,7 +843,7 @@ DS47 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 1 1 2000000 10000 462
+(CleScript  0 0 1 1 2000000 0 445
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -872,7 +873,7 @@ DS16 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 1 1 2000000 10000 571
+(CleScript  0 0 1 1 2000000 10000 549
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -942,7 +943,7 @@ DS48 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 1 1 2000000 10000 571
+(CleScript  0 0 1 1 2000000 10000 549
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -1012,7 +1013,7 @@ DS49 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 1 1 2000000 10000 571
+(CleScript  0 0 1 1 2000000 10000 549
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -1082,7 +1083,7 @@ DS50 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 1 1 2000000 10000 571
+(CleScript  0 0 1 1 2000000 10000 549
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -1152,7 +1153,7 @@ DS51 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 1 1 2000000 10000 571
+(CleScript  0 0 1 1 2000000 10000 549
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -1222,7 +1223,7 @@ DS52 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 1 1 2000000 10000 571
+(CleScript  0 0 1 1 2000000 10000 549
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -1292,7 +1293,7 @@ DS53 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 1 1 2000000 10000 571
+(CleScript  0 0 1 1 2000000 10000 549
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -1362,7 +1363,7 @@ DS54 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 1 1 2000000 10000 571
+(CleScript  0 0 1 1 2000000 10000 549
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -1432,7 +1433,7 @@ DS55 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 1 1 2000000 10000 571
+(CleScript  0 0 1 1 2000000 10000 549
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -1502,7 +1503,7 @@ DS56 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 1 1 2000000 10000 571
+(CleScript  0 0 1 1 2000000 10000 549
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -1574,7 +1575,7 @@ DS21 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 12 12 2000000 10000 1210
+(CleScript  0 0 12 12 2000000 10000 1162
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -1650,7 +1651,7 @@ DS22 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 13 13 2000000 10000 1014
+(CleScript  0 0 13 13 2000000 10000 976
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -1715,7 +1716,7 @@ DS23 10000 1;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 26 26 2000000 10000 1832
+(CleScript  0 0 26 26 2000000 10000 1766
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -1819,7 +1820,7 @@ DS24 1000 1;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 9 9 2000000 10000 533
+(CleScript  0 0 9 9 2000000 10000 513
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -1843,7 +1844,7 @@ snapnode(Width/2 + 2*Radius, Radius, 270);
 );
 B 10 30 5 25;
 B 10 30 25 25;
-C 39 R 0 30000 T 25 40;
+C 39 R 0 1 T 25 40;
 (C5Param Width 4059000000000000 0 0);
 (C5Param Angle 4066800000000000 0 0);
 (C5Param Radius 4059000000000000 0 0);
@@ -1860,7 +1861,7 @@ DS57 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 9 9 2000000 10000 533
+(CleScript  0 0 9 9 2000000 10000 513
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -1884,7 +1885,7 @@ snapnode(Width/2 + 2*Radius, Radius, 270);
 );
 B 200000 1363010 100000 881505;
 B 200000 1363010 500000 881505;
-C 44 R 0 30000 T 500000 1563010;
+C 44 R 0 1 T 500000 1563010;
 (C5Param Width 4069000000000000 0 0);
 (C5Param Angle 4066800000000000 0 0);
 (C5Param Radius 4069000000000000 0 0);
@@ -1902,7 +1903,7 @@ DS25 1000 1;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 31 31 2000000 10000 1132
+(CleScript  0 0 31 31 2000000 10000 1087
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -1954,7 +1955,7 @@ C 24 T 0 0;
 (C5Param Height 407f400000000000 0 0);
 (C5Param Radius 4059000000000000 0 0);
 (C5Param Layer 0 0 0);
-C 24 R -30000 0 T 50 0;
+C 24 MX MY T 50 0;
 (C5Param Width 4059000000000000 0 0);
 (C5Param Height 407f400000000000 0 0);
 (C5Param Radius 4059000000000000 0 0);
@@ -1964,7 +1965,7 @@ C 24 T 40 0;
 (C5Param Height 407f400000000000 0 0);
 (C5Param Radius 4059000000000000 0 0);
 (C5Param Layer 0 0 0);
-C 24 R -30000 0 T 90 0;
+C 24 MX MY T 90 0;
 (C5Param Width 4059000000000000 0 0);
 (C5Param Height 407f400000000000 0 0);
 (C5Param Radius 4059000000000000 0 0);
@@ -1991,7 +1992,7 @@ DS58 10000 1;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 31 31 2000000 10000 1132
+(CleScript  0 0 31 31 2000000 10000 1087
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -2043,7 +2044,7 @@ C 57 T 0 0;
 (C5Param Height 409b8c0a3d70a3d7 0 0);
 (C5Param Radius 4069000000000000 0 0);
 (C5Param Layer 0 0 0);
-C 57 R -30000 0 T 10 0;
+C 57 MX MY T 10 0;
 (C5Param Width 4069000000000000 0 0);
 (C5Param Height 409b8c0a3d70a3d7 0 0);
 (C5Param Radius 4069000000000000 0 0);
@@ -2053,7 +2054,7 @@ C 57 T 8 0;
 (C5Param Height 409b8c0a3d70a3d7 0 0);
 (C5Param Radius 4069000000000000 0 0);
 (C5Param Layer 0 0 0);
-C 57 R -30000 0 T 18 0;
+C 57 MX MY T 18 0;
 (C5Param Width 4069000000000000 0 0);
 (C5Param Height 409b8c0a3d70a3d7 0 0);
 (C5Param Radius 4069000000000000 0 0);
@@ -2080,7 +2081,7 @@ DS26 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 9 9 2000000 10000 328
+(CleScript  0 0 9 9 2000000 10000 314
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -2116,7 +2117,7 @@ DS27 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 16 16 2000000 10000 1804
+(CleScript  0 0 16 16 2000000 10000 1746
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -2202,7 +2203,7 @@ DS28 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 1 1 2000000 10000 657
+(CleScript  0 0 1 1 2000000 10000 636
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -2239,7 +2240,7 @@ DS29 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 102 102 2000000 10000 899
+(CleScript  0 0 102 102 2000000 10000 868
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -2385,7 +2386,7 @@ DS30 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 3 3 2000000 10000 709
+(CleScript  0 0 3 3 2000000 10000 685
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -2496,7 +2497,7 @@ DS59 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 3 3 2000000 10000 709
+(CleScript  0 0 3 3 2000000 10000 685
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -2607,7 +2608,7 @@ DS60 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 3 3 2000000 10000 709
+(CleScript  0 0 3 3 2000000 10000 685
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -2718,7 +2719,7 @@ DS61 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 3 3 2000000 10000 709
+(CleScript  0 0 3 3 2000000 10000 685
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -2829,7 +2830,7 @@ DS62 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 3 3 2000000 10000 709
+(CleScript  0 0 3 3 2000000 10000 685
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -2940,7 +2941,7 @@ DS63 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 3 3 2000000 10000 709
+(CleScript  0 0 3 3 2000000 10000 685
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -3051,7 +3052,7 @@ DS64 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 3 3 2000000 10000 709
+(CleScript  0 0 3 3 2000000 10000 685
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -3162,7 +3163,7 @@ DS31 10000 1;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 38 38 2000000 10000 512
+(CleScript  0 0 38 38 2000000 10000 492
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -3235,7 +3236,7 @@ DS32 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 18 18 2000000 10000 3539
+(CleScript  0 0 18 18 2000000 10000 3429
 void get_tangent_parallel(double x1, double x2, double y1, double y2, bool above, double* output) {
     double sign = (above) ? 1.0 : -1.0;
     output[2] = atan2(y2-y1, x2-x1);
@@ -3351,7 +3352,7 @@ parameter("Layer", Layer);
 (C5Snap 1000000 -1000000 30);
 (C5Snap 234031 -27804 -58.550365283748);
 (C5Snap 797035 -948359 148.550365283748);
-C 42 R 21213 21213 T 0 0;
+C 42 R 1 1 T 0 0;
 (C5Param Angle c059e3392f4fa34a 0 0);
 (C5Param Radius 4062c00000000000 0 0);
 (C5Param Width 4059000000000000 0 0);
@@ -3378,7 +3379,7 @@ DS33 1 10;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 1 1 2000000 10000 842
+(CleScript  0 0 1 1 2000000 10000 808
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);
@@ -3447,7 +3448,7 @@ DS34 100 1;
 L L0;
 (CleFont -2048 0 0 0 400 16777216 0 1634300481 108 0 0 0 0 0 0);
 (CleTransform 0 1072693248 0 0 0 0 0 1072693248 0 0 0 0);
-(CleScript  0 0 18 18 2000000 10000 818
+(CleScript  0 0 18 18 2000000 10000 789
 // Set layer
 char currLayer[100];
 sprintf(currLayer, "#%i", (int)Layer);

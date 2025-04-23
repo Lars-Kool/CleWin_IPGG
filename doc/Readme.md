@@ -290,3 +290,15 @@ Creates a spiral.
 
 <img src="../rsc/Spiral.png" width=300/>
 
+## Cutting marks
+
+Creates a bounding box to guide you while cutting the microfluidic channels.
+
+- Width:        Width of the bounding box.
+- Height:       Height of the bounding box.
+- Line_width:   Width of the line.
+- Mode:         Select between 3 modes (only corners, full lines, and dashed lines)
+- Dash_length:  Length of dashes. (Only taken into account in mode 2)
+- Spacing:      Spacing of the dashes. (Only taken into account in mode 2)
+
+<img src="../rsc/Cutting_marks.png" width=800/>
